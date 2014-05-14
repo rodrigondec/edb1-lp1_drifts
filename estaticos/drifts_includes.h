@@ -1,0 +1,6 @@
+#include "estaticos/drifts.h"
+#include "estaticos/drifts_OnInit.cpp"
+#include "estaticos/drifts_OnLoop.cpp"
+#include "estaticos/drifts_OnEvent.cpp"
+#include "estaticos/drifts_OnRender.cpp"
+#include "estaticos/drifts_OnCleanup.cpp"
