@@ -14,11 +14,5 @@ void Drifts::Render(){
 
     SDL_RenderCopy(Renderer, testura, NULL, NULL);
     
-
-    
-    /*std::string imagem = "../images/test.png";
-    imagem = "";
-  	this->TestTexture->Texture::Load(Renderer, imagem); // You should really check your pointers
-*/
 	SDL_RenderPresent(Renderer);
 }
