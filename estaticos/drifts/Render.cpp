@@ -1,11 +1,24 @@
 void Drifts::Render(){
+	SDL_RenderClear(Renderer);
+	SDL_Surface *image = IMG_Load("C:/Users/homepc/Downloads/rod/prog/drifts/estaticos/images/test.jpg");
+	if ( !image ){
+      std::cout<<"IMG_Load: "<<IMG_GetError();
+      return;
+    }
+    SDL_Rect rcDest = { 0, 0, 0, 0 };
+    SDL_BlitSurface ( image, NULL, PrimarySurface, &rcDest );
+    SDL_Texture * testura = SDL_CreateTextureFromSurface(Renderer, image);
+    SDL_FreeSurface ( image );
+    
 
 
+    SDL_RenderCopy(Renderer, testura, NULL, NULL);
+    
 
-
-    SDL_RenderClear(Renderer);
-
-    //TextureBank::Get("Test")->Render(0, 0); // You should really check your pointers
-
+    
+    /*std::string imagem = "../images/test.png";
+    imagem = "";
+  	this->TestTexture->Texture::Load(Renderer, imagem); // You should really check your pointers
+*/
 	SDL_RenderPresent(Renderer);
 }

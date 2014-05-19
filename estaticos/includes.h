@@ -2,6 +2,8 @@
 #include <SDL2/SDL_image.h>
 
 #include <iostream>
+#include <jpeg-9a/jpeglib.h>
+//#include <libpng12/libpng>
 
 #include "Log.h"
 
