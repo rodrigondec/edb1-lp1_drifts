@@ -1,0 +1,1 @@
+int Drifts::GetWindowWidth()  { return WindowWidth; }

@@ -1,0 +1,1 @@
+SDL_Renderer* Drifts::GetRenderer() { return Renderer; }

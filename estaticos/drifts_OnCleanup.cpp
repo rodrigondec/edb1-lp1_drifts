@@ -1,3 +1,0 @@
-void CApp::OnCleanup(){
-	
-}
