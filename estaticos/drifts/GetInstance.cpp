@@ -1,1 +1,0 @@
-Drifts* Drifts::GetInstance() { return &Drifts::Instance; }

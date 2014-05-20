@@ -2,16 +2,14 @@
 #include <SDL2/SDL_image.h>
 
 #include <iostream>
-#include <jpeg-9a/jpeglib.h>
-//#include <libpng12/libpng>
+#include <jpeg-9a/jpeglib.h> //Windows
+//#include <jpeglib.h> //Unity
 
 #include "Log.h"
 
 #include "texture/Texture.h"
 #include "texture/Texture.cpp"
 
-
-#include "drifts/drifts.h"
 
 #include "drifts/Execute.cpp"
 #include "drifts/Init.cpp"

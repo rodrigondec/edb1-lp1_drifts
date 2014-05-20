@@ -1,3 +1,3 @@
-void Drifts::Loop(){
+void Loop(){
 	
 }

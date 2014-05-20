@@ -1,4 +1,4 @@
-bool Drifts::Init(){
+bool Init(){
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
         Log("Unable to Init SDL: %s", SDL_GetError());
         return false;
@@ -32,8 +32,6 @@ bool Drifts::Init(){
         Log("Unable to init SDL_image: %s", IMG_GetError());
         return false;
     }
-
-
-    
+        
     return true;
 }

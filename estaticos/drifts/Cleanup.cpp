@@ -1,4 +1,4 @@
-void Drifts::Cleanup(){
+void Cleanup(){
 
 	if(Renderer) {
 		SDL_DestroyRenderer(Renderer);
