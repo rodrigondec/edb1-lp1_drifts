@@ -1,6 +1,5 @@
 #include "estaticos/includes.h"
 
-
 bool Running;
 
 const int WindowWidth = 640;
