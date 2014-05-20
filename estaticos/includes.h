@@ -2,8 +2,14 @@
 #include <SDL2/SDL_image.h>
 
 #include <iostream>
+<<<<<<< HEAD
 #include <jpeg-9a/jpeglib.h> //Windows
 //#include <jpeglib.h> //Unity
+=======
+#include <jpeglib.h>
+//#include <jpeg-9a/jpeglib.h>
+//#include <libpng12/libpng>
+>>>>>>> ab38e433afc2bcac755e1fce79963e8129bded01
 
 #include "Log.h"
 
