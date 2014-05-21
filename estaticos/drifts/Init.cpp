@@ -29,6 +29,29 @@ bool Init(){
         return false;
     }
 
+//+++++++++++++++++ SETANDO ICONE DO APP ++++++++++++++++++++++++++++++++//    
+    SDL_Surface* gScreenSurface = SDL_GetWindowSurface(Window);
+    SDL_Surface* ggOptimizedSurface = NULL;
+    SDL_Surface* ggLoadedSurface = IMG_Load("estaticos/images/player.png");
+
+    if(ggLoadedSurface == NULL)
+    {
+        cout << "Erro ao carregar imagem " << endl;
+    }
+    else
+    {
+        ggOptimizedSurface = SDL_ConvertSurface( ggLoadedSurface, gScreenSurface->format, 0);
+        if(ggOptimizedSurface == NULL)
+        {
+            cout <<"Erro ao converter imagem." << endl;
+        }
+    }
+    SDL_FreeSurface(gScreenSurface);
+    SDL_FreeSurface(ggLoadedSurface);
+
+    SDL_SetWindowIcon(Window, ggOptimizedSurface);
+    SDL_FreeSurface(ggOptimizedSurface);
+//++++++++++++++ END ICONE APP +++++++++++++++++++++++++++++++++++++++++//
     Running = true;
     screen = 0;
 
