@@ -17,14 +17,10 @@ bool Init(){
         return false;
     }
 
-    PrimarySurface = SDL_GetWindowSurface(Window);
-
     if((Renderer = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED)) == NULL) {
         Log("Unable to create renderer");
         return false;
     }
-
-    Running = true;
 
     SDL_SetRenderDrawColor(Renderer, 0x00, 0x00, 0x00, 0xFF);
 
@@ -32,6 +28,12 @@ bool Init(){
         Log("Unable to init SDL_image: %s", IMG_GetError());
         return false;
     }
-        
+
+    Running = true;
+    screen = 0;
+
+    playerRect.w = 45;
+    playerRect.h = 45;
+    
     return true;
 }

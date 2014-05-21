@@ -1,7 +1,7 @@
 #include <iostream>
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #include <string>
-#include <SDL_image.h>
+#include <SDL2/SDL_image.h>
 
 using namespace std;
 
@@ -36,37 +36,28 @@ void load_media();
 void event_key();
 void carregamento();
 
-void init()
-{
-    if( SDL_Init( SDL_INIT_VIDEO ) < 0 )
-    {
+void init(){
+    if( SDL_Init( SDL_INIT_VIDEO ) < 0 ){
         cout << "Ocorreu um erro na inicializacao do SDL, Erro: " << SDL_GetError() << endl;
     }
-    else
-    {
-        if( !SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1") )
-        {
+    else{
+        if( !SDL_SetHint( SDL_HINT_RENDER_SCALE_QUALITY, "1") ){
             cout << "Warning: Linear texture filtering not enabled." << endl;
         }
 
         gWindow = SDL_CreateWindow( "Barra de Carregamento usando Textures", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN );
-        if( gWindow == NULL )
-        {
+        if( gWindow == NULL ){
             cout << "The window cold not be created! SDL Error: " << SDL_GetError() << endl;
         }
-        else
-        {
+        else{
             gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED );
-            if(gRenderer == NULL)
-            {
+            if(gRenderer == NULL){
                 cout << "Renderer could not be created! SDL Error: " << SDL_GetError() << endl;
             }
-            else
-            {
-                SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
+            else{
+                SDL_SetRenderDrawColor( gRenderer, 0x00, 0x00, 0x00, 0xFF );
                 int imgFlags = IMG_INIT_PNG;
-                if( !IMG_Init(imgFlags) && !imgFlags )
-                {
+                if( !IMG_Init(imgFlags) && !imgFlags ){
                     cout << "SDL coud not be initialized! SDL Error: " << IMG_GetError() << endl;
                 }
             }
@@ -74,8 +65,7 @@ void init()
     }
 }
 
-SDL_Texture* load_PNG(string path)
-{
+SDL_Texture* load_PNG(string path){
     SDL_Texture* ggOptimizedTexture = NULL;
     SDL_Surface* ggLoadedSurface = IMG_Load( path.c_str() );
 
@@ -96,8 +86,7 @@ SDL_Texture* load_PNG(string path)
     return ggOptimizedTexture;
 }
 
-void load_media()
-{
+void load_media(){
     gCar = load_PNG("Arquivos/Imagens/barra.png");
     int estado = 0;
     gImages[IMG_0] = load_PNG("Arquivos/Imagens/0.png");
@@ -177,8 +166,7 @@ void load_media()
     cout << "Carregou!" << endl;
 }
 
-void carregamento()
-{
+void carregamento(){
     estado++;
     cout << estado << endl;
 
@@ -191,8 +179,7 @@ void carregamento()
     SDL_RenderPresent( gRenderer );
 }
 
-void event_key()
-{
+void event_key(){
     SDL_PollEvent( &e );
 
     if(e.type == SDL_QUIT)
@@ -323,8 +310,7 @@ void event_key()
     }
 }
 
-int main( int argc, char* args[] )
-{
+int main( int argc, char* args[] ){
     init();
 
     SDL_SetRenderDrawColor( gRenderer, 0, 0, 0, 0xFF );
@@ -332,8 +318,7 @@ int main( int argc, char* args[] )
 
     load_media();
 
-    while(sair == false)
-    {
+    while(sair == false){
         event_key();
 
         stretchRect.x = (SCREEN_WIDTH / 2) - (397 / 2);
