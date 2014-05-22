@@ -1,3 +1,3 @@
 {
-	"shell_cmd": "g++ -o drifts drifts.cpp -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -static-libgcc -static-libstdc++"
+	"shell_cmd": "g++ -Wall -o drifts drifts.cpp -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -static-libgcc -static-libstdc++"
 }
