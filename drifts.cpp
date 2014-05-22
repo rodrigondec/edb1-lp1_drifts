@@ -11,9 +11,16 @@ const int WindowWidth = 640;
 const int WindowHeight = 480;
 
 SDL_Window* Window = NULL;
+
+SDL_Texture* backgroundTexture = NULL;
+SDL_Texture* playerTexture = NULL;
+SDL_Texture* bolaTexture = NULL;
+
 SDL_Renderer* Renderer = NULL;
 
 SDL_Event Event;
+
+SDL_Rect backgroundRect;
 
 SDL_Rect playerRect;
 

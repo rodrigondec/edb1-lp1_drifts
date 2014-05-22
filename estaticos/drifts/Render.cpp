@@ -1,11 +1,11 @@
 void Render(){
   	SDL_RenderClear(Renderer);
 //================================================== TELA INICIAL =========================================================
-  	/*if(screen == 0){*/
-	  	SDL_Texture* backgroundTexture = load_PNG("estaticos/images/background.png");
+  	if(screen == 0){
+	  	backgroundTexture = load_PNG("estaticos/images/background.png");
 		SDL_RenderCopy(Renderer, backgroundTexture, NULL, NULL);
 
-		/*playerTexture = load_PNG("estaticos/images/player.png");
+		playerTexture = load_PNG("estaticos/images/player.png");
 		SDL_RenderCopy(Renderer, playerTexture, NULL, &playerRect);
   	}
 //================================================== MENU ================================================================
@@ -45,7 +45,7 @@ void Render(){
 			
 			SDL_RenderCopy(Renderer, bolaTexture, NULL, NULL);
 		}
-  	}*/
+  	}
 
   	SDL_RenderPresent(Renderer);
 }
