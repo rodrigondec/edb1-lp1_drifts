@@ -39,10 +39,9 @@ bool Init(){
 //+++++++++++++++++ SETANDO ICONE DO APP ++++++++++++++++++++++++++++++++//    
     SDL_Surface* gScreenSurface = SDL_GetWindowSurface(Window);
     SDL_Surface* ggOptimizedSurface = NULL;
-    SDL_Surface* ggLoadedSurface = IMG_Load("images/player.png");
+    SDL_Surface* ggLoadedSurface = IMG_Load("images/balls/player.png");
 
-    if(ggLoadedSurface == NULL)
-    {
+    if(ggLoadedSurface == NULL){
         cout << "Erro ao carregar imagem " << endl;
     }
     else
@@ -61,12 +60,34 @@ bool Init(){
 //++++++++++++++ END ICONE APP +++++++++++++++++++++++++++++++++++++++++//
 
 //++++++++++++++ LOADING IMG'S +++++++++++++++++++++++++++++++++++++++++//
-    TextureBank[IMG_CREDITS] = load_PNG("images/background.png");
-    TextureBank[IMG_BACKGROUND] = load_PNG("images/background.png");
-    TextureBank[IMG_PLAYER] = load_PNG("images/player.png");
-    TextureBank[IMG_POINTER] = load_PNG("images/pointer.png");
-    TextureBank[IMG_MURDERER] = load_PNG("images/murderer.png");
-    TextureBank[IMG_SAVER] = load_PNG("images/saver.png");
+    TextureBank[IMG_INITIALSCREEN] = load_PNG("images/background/initialscreen.png");
+    TextureBank[IMG_BACKGROUND] = load_PNG("images/background/background.png");
+    
+    TextureBank[IMG_STARTGAME] = load_PNG("images/menu/startgame.png");
+    TextureBank[IMG_GAMEOVER] = load_PNG("images/menu/gameover.png");
+
+    TextureBank[IMG_0] = load_PNG("images/numeros/0.png");
+    TextureBank[IMG_1] = load_PNG("images/numeros/1.png");
+    TextureBank[IMG_2] = load_PNG("images/numeros/2.png");
+    TextureBank[IMG_3] = load_PNG("images/numeros/3.png");
+    TextureBank[IMG_4] = load_PNG("images/numeros/4.png");
+    TextureBank[IMG_5] = load_PNG("images/numeros/5.png");
+    TextureBank[IMG_6] = load_PNG("images/numeros/6.png");
+    TextureBank[IMG_7] = load_PNG("images/numeros/7.png");
+    TextureBank[IMG_8] = load_PNG("images/numeros/8.png");
+    TextureBank[IMG_9] = load_PNG("images/numeros/9.png");
+
+    TextureBank[IMG_USERLIFE] = load_PNG("images/icons/user_life.png");
+    TextureBank[IMG_PLAY] = load_PNG("images/icons/play.png");
+    TextureBank[IMG_PAUSE] = load_PNG("images/icons/pause.png");
+    TextureBank[IMG_PLAYAGAIN] = load_PNG("images/icons/play_again.png");
+    TextureBank[IMG_SOUNDON] = load_PNG("images/icons/sound.png");
+    TextureBank[IMG_SOUNDOFF] = load_PNG("images/icons/sound_off.png");
+
+    TextureBank[IMG_PLAYER] = load_PNG("images/balls/player.png");
+    TextureBank[IMG_POINTER] = load_PNG("images/balls/pointer.png");
+    TextureBank[IMG_MURDERER] = load_PNG("images/balls/murderer.png");
+    TextureBank[IMG_SAVER] = load_PNG("images/balls/saver.png");
 //++++++++++++++ END LOADING ++++++++++++++++++++++++++++++++++++++++++//
 
 //++++++++++++++ SETING VAR'S +++++++++++++++++++++++++++++++++++++++++//

@@ -2,18 +2,7 @@ void Render(){
   	SDL_RenderClear(Renderer);
 //================================================== TELA INICIAL =========================================================
   	if(screen == 0){
-		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
-		if(bolas[0].tipo == "pointer"){
-			SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[0].Rect);
-		}
-		else if(bolas[0].tipo == "murderer"){
-			SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[0].Rect);
-		}
-		else if(bolas[0].tipo == "saver"){
-			SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[0].Rect);
-		}	
-		
-		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &playerRect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_INITIALSCREEN], NULL, NULL);
   	}
 //================================================== MENU ================================================================
   	else if(screen == 1){
