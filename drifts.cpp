@@ -3,6 +3,7 @@
 using std::cout;
 using std::endl;
 using std::string;
+using std::vector;
 
 enum{
     IMG_CREDITS, IMG_BACKGROUND, IMG_PLAYER, IMG_POINTER, IMG_MURDERER, IMG_SAVER, TOTAL_IMG
@@ -17,7 +18,7 @@ struct Bola{
 bool Running;
 int screen;
 
-Bola *bolas = new Bola[1];
+vector <Bola> bolas;
 
 const int WindowWidth = 640;
 const int WindowHeight = 480;
@@ -34,11 +35,13 @@ int main(int argc, char* argv[]) {
     if(!Init()) {
         return 0;
     }
-    while(1){
-        Bola temp = new Bola[]; 
-        temp.attached = true;
-        cout<<"temp.attached = "<<temp.attached<<endl;
-    }
+    //while(1){
+        create_bola();
+        bolas[0].attached = true;
+        create_bola();
+        cout<<"bolas[0].rect.x = "<<bolas[0].attached<<endl;
+        cout<<"bolas[1].rect.x = "<<bolas[1].attached<<endl;
+    //}
     while(Running) {
         while(SDL_PollEvent(&Event) != 0) {
             OnEvent(&Event);

@@ -3,5 +3,6 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include <vector>
 
 #include "Log.h"
