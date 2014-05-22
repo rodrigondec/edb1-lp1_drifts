@@ -2,50 +2,41 @@ void Render(){
   	SDL_RenderClear(Renderer);
 //================================================== TELA INICIAL =========================================================
   	if(screen == 0){
-	  	backgroundTexture = load_PNG("estaticos/images/background.png");
-		SDL_RenderCopy(Renderer, backgroundTexture, NULL, NULL);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
 
-		playerTexture = load_PNG("estaticos/images/player.png");
-		SDL_RenderCopy(Renderer, playerTexture, NULL, &playerRect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &playerRect);
   	}
 //================================================== MENU ================================================================
   	else if(screen == 1){
-	  	backgroundTexture = load_PNG("estaticos/images/background.png");
-		SDL_RenderCopy(Renderer, backgroundTexture, NULL, NULL);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
   	}
 //================================================== GAME ================================================================
   	else if(screen == 2){
   	//---------------------------------------------- BACKGROUND ----------------------------------------------------------
-	  	backgroundTexture = load_PNG("estaticos/images/background.png");
-		SDL_RenderCopy(Renderer, backgroundTexture, NULL, NULL);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
 
 	//---------------------------------------------- MOUSE ---------------------------------------------------------------
-	  	playerTexture = load_PNG("estaticos/images/player.png");
-		SDL_RenderCopy(Renderer, playerTexture, NULL, &playerRect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &playerRect);
 	//++++++++++++++++++++++++++++++++++++++++++++++ BOLAS ATTACHED ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		while(bolaTexture){
-		  	bolaTexture = load_PNG("estaticos/images/pointer.png");
-		  	SDL_RenderCopy(Renderer, bolaTexture, NULL, NULL);
+		int bola = 1;
+		while(bola){
+		  	SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, NULL);
 		}
 	//---------------------------------------------- BOLAS ---------------------------------------------------------------
-		int bola = 1;
 		while(true){
 		//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; POINTER ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 			if(bola == 1){
-		  		bolaTexture = load_PNG("estaticos/images/pointer.png");
+		  		SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, NULL);
 			}
 		//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SAVER ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 			else if(bola == 2){
-		  		bolaTexture = load_PNG("estaticos/images/saver.png");
+		  		SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, NULL);
 			}
 		//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MURDERER ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
 			else if(bola == 3){
-		  		bolaTexture = load_PNG("estaticos/images/murderer.png");
+		  		SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, NULL);
 			}
-			
-			SDL_RenderCopy(Renderer, bolaTexture, NULL, NULL);
-		}
+		}			
   	}
-
   	SDL_RenderPresent(Renderer);
 }

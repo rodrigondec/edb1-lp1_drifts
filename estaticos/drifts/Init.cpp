@@ -52,6 +52,21 @@ bool Init(){
     SDL_SetWindowIcon(Window, ggOptimizedSurface);
     SDL_FreeSurface(ggOptimizedSurface);
 //++++++++++++++ END ICONE APP +++++++++++++++++++++++++++++++++++++++++//
+//++++++++++++++ LOADING IMG'S +++++++++++++++++++++++++++++++++++++++++//
+    TextureBank[IMG_CREDITS] = load_PNG("estaticos/images/background.png");
+    TextureBank[IMG_BACKGROUND] = load_PNG("estaticos/images/background.png");
+    TextureBank[IMG_PLAYER] = load_PNG("estaticos/images/player.png");
+    TextureBank[IMG_POINTER] = load_PNG("estaticos/images/pointer.png");
+    TextureBank[IMG_MURDERER] = load_PNG("estaticos/images/murderer.png");
+    TextureBank[IMG_SAVER] = load_PNG("estaticos/images/saver.png");
+    
+
+
+
+
+
+
+
     Running = true;
     screen = 0;
 

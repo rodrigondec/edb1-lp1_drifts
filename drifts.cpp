@@ -4,6 +4,10 @@ using std::cout;
 using std::endl;
 using std::string;
 
+enum{
+    IMG_CREDITS, IMG_BACKGROUND, IMG_PLAYER, IMG_POINTER, IMG_MURDERER, IMG_SAVER, TOTAL_IMG
+};
+
 bool Running;
 int screen;
 
@@ -12,9 +16,7 @@ const int WindowHeight = 480;
 
 SDL_Window* Window = NULL;
 
-SDL_Texture* backgroundTexture = NULL;
-SDL_Texture* playerTexture = NULL;
-SDL_Texture* bolaTexture = NULL;
+SDL_Texture* TextureBank[TOTAL_IMG] = {};
 
 SDL_Renderer* Renderer = NULL;
 

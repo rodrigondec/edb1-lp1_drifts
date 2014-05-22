@@ -186,11 +186,9 @@ void event_key(){
     {
         sair = true;
     }
-    else if( e.type == SDL_KEYDOWN )
-    {
+    else if(e.type == SDL_KEYDOWN){
         SDL_RenderClear( gRenderer );
-        switch( e.key.keysym.sym )
-        {
+        switch( e.key.keysym.sym ){
             case SDLK_0:
                 gCurrentTexture = gImages[IMG_0];
                 break;
@@ -304,8 +302,7 @@ void event_key(){
                 break;
         }
     }
-    else if(e.type == SDL_KEYUP)
-    {
+    else if(e.type == SDL_KEYUP){
         //nothing.
     }
 }
