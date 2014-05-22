@@ -32,7 +32,7 @@ bool Init(){
 //+++++++++++++++++ SETANDO ICONE DO APP ++++++++++++++++++++++++++++++++//    
     SDL_Surface* gScreenSurface = SDL_GetWindowSurface(Window);
     SDL_Surface* ggOptimizedSurface = NULL;
-    SDL_Surface* ggLoadedSurface = IMG_Load("estaticos/images/player.png");
+    SDL_Surface* ggLoadedSurface = IMG_Load("images/player.png");
 
     if(ggLoadedSurface == NULL)
     {
@@ -53,13 +53,13 @@ bool Init(){
     SDL_FreeSurface(ggOptimizedSurface);
 //++++++++++++++ END ICONE APP +++++++++++++++++++++++++++++++++++++++++//
 //++++++++++++++ LOADING IMG'S +++++++++++++++++++++++++++++++++++++++++//
-    TextureBank[IMG_CREDITS] = load_PNG("estaticos/images/background.png");
-    TextureBank[IMG_BACKGROUND] = load_PNG("estaticos/images/background.png");
-    TextureBank[IMG_PLAYER] = load_PNG("estaticos/images/player.png");
-    TextureBank[IMG_POINTER] = load_PNG("estaticos/images/pointer.png");
-    TextureBank[IMG_MURDERER] = load_PNG("estaticos/images/murderer.png");
-    TextureBank[IMG_SAVER] = load_PNG("estaticos/images/saver.png");
-    
+    TextureBank[IMG_CREDITS] = load_PNG("images/background.png");
+    TextureBank[IMG_BACKGROUND] = load_PNG("images/background.png");
+    TextureBank[IMG_PLAYER] = load_PNG("images/player.png");
+    TextureBank[IMG_POINTER] = load_PNG("images/pointer.png");
+    TextureBank[IMG_MURDERER] = load_PNG("images/murderer.png");
+    TextureBank[IMG_SAVER] = load_PNG("images/saver.png");
+
 
 
 
