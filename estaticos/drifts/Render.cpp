@@ -4,7 +4,7 @@ void Render(){
   	if(screen == 0){
 	  	backgroundTexture = load_PNG("estaticos/images/background.png");
 		SDL_RenderCopy(Renderer, backgroundTexture, NULL, NULL);
-		
+
 		playerTexture = load_PNG("estaticos/images/player.png");
 		SDL_RenderCopy(Renderer, playerTexture, NULL, &playerRect);
   	}
@@ -23,13 +23,12 @@ void Render(){
 	  	playerTexture = load_PNG("estaticos/images/player.png");
 		SDL_RenderCopy(Renderer, playerTexture, NULL, &playerRect);
 	//++++++++++++++++++++++++++++++++++++++++++++++ BOLAS ATTACHED ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		SDL_Texture* bolas_attack;
-		while(bolas_attack){
+		while(bolaTexture){
 		  	bolaTexture = load_PNG("estaticos/images/pointer.png");
-		  	SDL_RenderCopy(Renderer, bolas_attack, NULL, NULL);
+		  	SDL_RenderCopy(Renderer, bolaTexture, NULL, NULL);
 		}
 	//---------------------------------------------- BOLAS ---------------------------------------------------------------
-		int bola;
+		int bola = 1;
 		while(true){
 		//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; POINTER ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 			if(bola == 1){
