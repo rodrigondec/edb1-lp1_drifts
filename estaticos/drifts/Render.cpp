@@ -3,7 +3,16 @@ void Render(){
 //================================================== TELA INICIAL =========================================================
   	if(screen == 0){
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
-
+		if(bolas[0].tipo == "pointer"){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[0].Rect);
+		}
+		else if(bolas[0].tipo == "murderer"){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[0].Rect);
+		}
+		else if(bolas[0].tipo == "saver"){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[0].Rect);
+		}	
+		
 		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &playerRect);
   	}
 //================================================== MENU ================================================================
@@ -17,24 +26,16 @@ void Render(){
 
 	//---------------------------------------------- MOUSE ---------------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &playerRect);
-	//++++++++++++++++++++++++++++++++++++++++++++++ BOLAS ATTACHED ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-		int bola = 1;
-		while(bola){
-		  	SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, NULL);
-		}
 	//---------------------------------------------- BOLAS ---------------------------------------------------------------
-		while(true){
-		//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; POINTER ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-			if(bola == 1){
-		  		SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, NULL);
+		for(unsigned i; i < bolas.size(); i++){
+			if(bolas[i].tipo == "pointer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[i].Rect);
 			}
-		//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; SAVER ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-			else if(bola == 2){
-		  		SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, NULL);
+			else if(bolas[i].tipo == "murderer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[i].Rect);
 			}
-		//;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; MURDERER ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;	
-			else if(bola == 3){
-		  		SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, NULL);
+			else if(bolas[i].tipo == "saver"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[i].Rect);
 			}
 		}			
   	}

@@ -28,6 +28,6 @@ void create_bola(){
 	bolas[i].attached = false;//Bolas spawnam com atributo attached false (logicamente)
 	bolas[i].Rect.x = randomx;//Posição X inicial
 	bolas[i].Rect.y = 0;//Posição Y inicial = 0 (bolas spawnam no canto superior da tela)
-	bolas[i].Rect.w = 35;//Widht da bola
-	bolas[i].Rect.h = 35;//Hiehgt da bola
+	bolas[i].Rect.w = 45;//Widht da bola
+	bolas[i].Rect.h = 45;//Hiehgt da bola
 }
