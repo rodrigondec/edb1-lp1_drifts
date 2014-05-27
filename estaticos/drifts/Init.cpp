@@ -77,6 +77,33 @@ bool Init(){
     TextureBank[IMG_8] = load_PNG("images/numeros/8.png");
     TextureBank[IMG_9] = load_PNG("images/numeros/9.png");
 
+
+    TextureBank[IMG_A] = load_PNG("images/letras/A.png");
+    TextureBank[IMG_B] = load_PNG("images/letras/B.png");
+    TextureBank[IMG_C] = load_PNG("images/letras/C.png");
+    TextureBank[IMG_D] = load_PNG("images/letras/D.png");
+    TextureBank[IMG_E] = load_PNG("images/letras/E.png");
+    TextureBank[IMG_F] = load_PNG("images/letras/F.png");
+    TextureBank[IMG_G] = load_PNG("images/letras/G.png");
+    TextureBank[IMG_H] = load_PNG("images/letras/H.png");
+    TextureBank[IMG_I] = load_PNG("images/letras/I.png");
+    TextureBank[IMG_J] = load_PNG("images/letras/J.png");
+    TextureBank[IMG_K] = load_PNG("images/letras/K.png");
+    TextureBank[IMG_L] = load_PNG("images/letras/L.png");
+    TextureBank[IMG_M] = load_PNG("images/letras/M.png");
+    TextureBank[IMG_N] = load_PNG("images/letras/N.png");
+    TextureBank[IMG_O] = load_PNG("images/letras/O.png");
+    TextureBank[IMG_P] = load_PNG("images/letras/P.png");
+    TextureBank[IMG_Q] = load_PNG("images/letras/Q.png");
+    TextureBank[IMG_R] = load_PNG("images/letras/R.png");
+    TextureBank[IMG_S] = load_PNG("images/letras/S.png");
+    TextureBank[IMG_T] = load_PNG("images/letras/T.png");
+    TextureBank[IMG_U] = load_PNG("images/letras/U.png");
+    TextureBank[IMG_V] = load_PNG("images/letras/V.png");
+    TextureBank[IMG_W] = load_PNG("images/letras/W.png");
+    TextureBank[IMG_Y] = load_PNG("images/letras/Y.png");
+    TextureBank[IMG_Z] = load_PNG("images/letras/Z.png");
+
     TextureBank[IMG_USERLIFE] = load_PNG("images/icons/user_life.png");
     TextureBank[IMG_PLAY] = load_PNG("images/icons/play.png");
     TextureBank[IMG_PAUSE] = load_PNG("images/icons/pause.png");
