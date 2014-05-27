@@ -48,8 +48,8 @@ bool Init(){
     TextureBank[IMG_INITIALSCREEN] = load_PNG("images/background/initialscreen.png");
     TextureBank[IMG_BACKGROUND] = load_PNG("images/background/background.png");
     
-    TextureBank[IMG_STARTGAME] = load_PNG("images/rewind/startgame.png");
-    TextureBank[IMG_GAMEOVER] = load_PNG("images/rewind/gameover.png");
+    TextureBank[IMG_STARTGAME] = load_PNG("images/menu/startgame.png");
+    TextureBank[IMG_GAMEOVER] = load_PNG("images/menu/gameover.png");
 
     TextureBank[IMG_0] = load_PNG("images/numeros/0.png");
     TextureBank[IMG_1] = load_PNG("images/numeros/1.png");
@@ -89,7 +89,7 @@ bool Init(){
     TextureBank[IMG_Y] = load_PNG("images/letras/Y.png");
     TextureBank[IMG_Z] = load_PNG("images/letras/Z.png");
 
-    TextureBank[IMG_REWIND] = load_PNG("images/icons/rewind.png");
+    TextureBank[IMG_MENU] = load_PNG("images/icons/menu.png");
     TextureBank[IMG_USERLIFE] = load_PNG("images/icons/user_life.png");
     TextureBank[IMG_PLAY] = load_PNG("images/icons/play.png");
     TextureBank[IMG_PAUSE] = load_PNG("images/icons/pause.png");
@@ -115,10 +115,10 @@ bool Init(){
     startgameRect.w = 800;
     startgameRect.h = 80;
 
-    rewindRect.x = 10;
-    rewindRect.y = 10;
-    rewindRect.w = 80;
-    rewindRect.h = 80;
+    menuRect.x = 10;
+    menuRect.y = 10;
+    menuRect.w = 80;
+    menuRect.h = 80;
 //++++++++++++++ END VAR'S +++++++++++++++++++++++++++++++++++++++++++//
     system("cls");
     return true;
