@@ -37,26 +37,11 @@ bool Init(){
 //+++++++++++++++++ END PNG LIB +++++++++++++++++++++++++++++++++++++++++//
 
 //+++++++++++++++++ SETANDO ICONE DO APP ++++++++++++++++++++++++++++++++//    
-    SDL_Surface* gScreenSurface = SDL_GetWindowSurface(Window);
-    SDL_Surface* ggOptimizedSurface = NULL;
-    SDL_Surface* ggLoadedSurface = IMG_Load("images/balls/player.png");
+    SDL_Surface* loadsurf = IMG_Load("C:/Users/Rodrigo/Downloads/prog/drifts/images/balls/player.png");
+    
+    SDL_SetWindowIcon(Window, loadsurf);
 
-    if(ggLoadedSurface == NULL){
-        cout << "Erro ao carregar imagem " << endl;
-    }
-    else
-    {
-        ggOptimizedSurface = SDL_ConvertSurface( ggLoadedSurface, gScreenSurface->format, 0);
-        if(ggOptimizedSurface == NULL)
-        {
-            cout <<"Erro ao converter imagem." << endl;
-        }
-    }
-    SDL_FreeSurface(gScreenSurface);
-    SDL_FreeSurface(ggLoadedSurface);
-
-    SDL_SetWindowIcon(Window, ggOptimizedSurface);
-    SDL_FreeSurface(ggOptimizedSurface);
+    SDL_FreeSurface(loadsurf);
 //++++++++++++++ END ICONE APP +++++++++++++++++++++++++++++++++++++++++//
 
 //++++++++++++++ LOADING IMG'S +++++++++++++++++++++++++++++++++++++++++//
@@ -124,5 +109,6 @@ bool Init(){
     playerRect.w = 45;//Mouse Width
     playerRect.h = 45;//Mouse Height
 //++++++++++++++ END VAR'S +++++++++++++++++++++++++++++++++++++++++++//
+    system("cls");
     return true;
 }
