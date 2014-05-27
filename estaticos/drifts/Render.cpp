@@ -8,7 +8,7 @@ void Render(){
   	else if(screen == 1){
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
 
-		SDL_RenderCopy(Renderer, TextureBank[IMG_MENU], NULL, &menuRect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_REWIND], NULL, &rewindRect);
 		
 		SDL_RenderCopy(Renderer, TextureBank[IMG_STARTGAME], NULL, &startgameRect);
   	}
