@@ -89,6 +89,7 @@ bool Init(){
     TextureBank[IMG_Y] = load_PNG("images/letras/Y.png");
     TextureBank[IMG_Z] = load_PNG("images/letras/Z.png");
 
+    TextureBank[IMG_MENU] = load_PNG("images/icons/menu.png");
     TextureBank[IMG_USERLIFE] = load_PNG("images/icons/user_life.png");
     TextureBank[IMG_PLAY] = load_PNG("images/icons/play.png");
     TextureBank[IMG_PAUSE] = load_PNG("images/icons/pause.png");
@@ -108,6 +109,16 @@ bool Init(){
 
     playerRect.w = 45;//Mouse Width
     playerRect.h = 45;//Mouse Height
+
+    startgameRect.y = ((WindowHeight-120)/2);
+    startgameRect.x = -50;
+    startgameRect.w = 800;
+    startgameRect.h = 80;
+
+    menuRect.x = 10;
+    menuRect.y = 10;
+    menuRect.w = 80;
+    menuRect.h = 80;
 //++++++++++++++ END VAR'S +++++++++++++++++++++++++++++++++++++++++++//
     system("cls");
     return true;

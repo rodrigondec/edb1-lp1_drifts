@@ -7,9 +7,10 @@ void Render(){
 //================================================== MENU ================================================================
   	else if(screen == 1){
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
-		geralRect.w = 800;
-		geralRect.h = 80;
-		SDL_RenderCopy(Renderer, TextureBank[IMG_STARTGAME], NULL, &geralRect);
+
+		SDL_RenderCopy(Renderer, TextureBank[IMG_MENU], NULL, &menuRect);
+		
+		SDL_RenderCopy(Renderer, TextureBank[IMG_STARTGAME], NULL, &startgameRect);
   	}
 //================================================== GAME ================================================================
   	else if(screen == 2){
