@@ -31,8 +31,10 @@ const int WindowHeight = 480;
 SDL_Window* Window = NULL;
 SDL_Texture* TextureBank[TOTAL_IMG] = {};
 SDL_Renderer* Renderer = NULL;
-SDL_Rect playerRect;
 SDL_Event Event;
+
+SDL_Rect playerRect;
+SDL_Rect geralRect;
 
 #include "estaticos/includes_templates.h"
 
