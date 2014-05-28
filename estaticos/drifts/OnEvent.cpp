@@ -13,7 +13,10 @@ void OnEvent(SDL_Event* Event){
             if(player.Rect.x >= 10 && player.Rect.x <= 90 && player.Rect.y >= 10 && player.Rect.y <= 90){
                 screen = 0;
             }
-
+            else if(player.Rect.x >= startgameRect.x && player.Rect.x >= (startgameRect.x + startgameRect.w) &&
+                    player.Rect.y >= startgameRect.y && player.Rect.y >= (startgameRect.y + startgameRect.h)){
+                screen = 2;
+            }
 
 
 
