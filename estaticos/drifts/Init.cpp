@@ -1,11 +1,11 @@
 bool Init(){
 //+++++++++++++++++ INITIALIZING VIDEO ++++++++++++++++++++++++++++++++++++//
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
-        Log("Unable to Init SDL: %s", SDL_GetError());
+        cout<<"Unable to Init SDL: "<<SDL_GetError();
         return false;
     }
     if(!SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1")) {
-        Log("Unable to Init hinting: %s", SDL_GetError());
+        cout<<"Unable to Init hinting: "<<SDL_GetError();
     }
 //+++++++++++++++++ END INIT VIDEO ++++++++++++++++++++++++++++++++++++++++//
 
@@ -15,14 +15,14 @@ bool Init(){
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
         WindowWidth, WindowHeight, SDL_WINDOW_SHOWN)
     ) == NULL) {
-        Log("Unable to create SDL Window: %s", SDL_GetError());
+        cout<<"Unable to create SDL Window: "<<SDL_GetError();
         return false;
     }
 //+++++++++++++++++ END WINDOW +++++++++++++++++++++++++++++++++++++++++++//
 
 //+++++++++++++++++ RENDERING WINDOW +++++++++++++++++++++++++++++++++++++//
     if((Renderer = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED)) == NULL) {
-        Log("Unable to create renderer");
+        cout<<"Unable to create renderer";
         return false;
     }
 
@@ -31,7 +31,7 @@ bool Init(){
 
 //+++++++++++++++++ INITIALIZING PNG LIB ++++++++++++++++++++++++++++++++//
     if(!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
-        Log("Unable to init SDL_image: %s", IMG_GetError());
+        cout<<"Unable to init SDL_image: "<<IMG_GetError();
         return false;
     }
 //+++++++++++++++++ END PNG LIB +++++++++++++++++++++++++++++++++++++++++//
