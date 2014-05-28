@@ -21,10 +21,15 @@ struct Bola{
     SDL_Rect Rect;
 };
 
+struct Player{
+    SDL_Rect Rect;
+};
+
 bool Running;
 int screen;
 
 vector <Bola> bolas;
+Player player;
 
 const int WindowWidth = 640;
 const int WindowHeight = 480;
@@ -34,7 +39,6 @@ SDL_Texture* TextureBank[TOTAL_IMG] = {};
 SDL_Renderer* Renderer = NULL;
 SDL_Event Event;
 
-SDL_Rect playerRect;
 SDL_Rect startgameRect;
 SDL_Rect rewindRect;
 

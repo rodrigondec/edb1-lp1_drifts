@@ -18,7 +18,7 @@ void Render(){
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
 
 	//---------------------------------------------- MOUSE ---------------------------------------------------------------
-		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &playerRect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
 	//---------------------------------------------- BOLAS ---------------------------------------------------------------
 		for(unsigned i; i < bolas.size(); i++){
 			if(bolas[i].tipo == "pointer"){

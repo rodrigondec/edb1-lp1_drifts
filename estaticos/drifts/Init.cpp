@@ -107,8 +107,8 @@ bool Init(){
     Running = true;
     screen = 0;
 
-    playerRect.w = 45;//Mouse Width
-    playerRect.h = 45;//Mouse Height
+    player.Rect.w = 45;//Mouse Width
+    player.Rect.h = 45;//Mouse Height
 
     startgameRect.y = ((WindowHeight-120)/2);
     startgameRect.x = -50;
