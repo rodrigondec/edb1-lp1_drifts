@@ -19,7 +19,7 @@ bool Init(){
         return false;
     }
 //+++++++++++++++++ END WINDOW +++++++++++++++++++++++++++++++++++++++++++//
-
+//differ
 //+++++++++++++++++ RENDERING WINDOW +++++++++++++++++++++++++++++++++++++//
     if((Renderer = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED)) == NULL) {
         cout<<"Unable to create renderer";

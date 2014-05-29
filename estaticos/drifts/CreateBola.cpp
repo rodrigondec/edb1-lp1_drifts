@@ -6,7 +6,7 @@ void create_bola(){
 	int i = bolas.size()-1;
 	int randomx, randomt;
 
-
+	//differ
 
 	randomx = 0;
 

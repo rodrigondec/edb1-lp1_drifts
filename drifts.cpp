@@ -14,7 +14,7 @@ enum{
     IMG_REWIND, IMG_USERLIFE, IMG_PLAY, IMG_PAUSE, IMG_PLAYAGAIN, IMG_SOUNDON, IMG_SOUNDOFF, 
     IMG_PLAYER, IMG_POINTER, IMG_MURDERER, IMG_SAVER, TOTAL_IMG
 };
-
+//differ
 struct Bola{
     bool attached;
     string tipo;

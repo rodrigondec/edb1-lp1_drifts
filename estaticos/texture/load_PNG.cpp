@@ -12,6 +12,6 @@ SDL_Texture* load_PNG(string path){
         }
     }
     SDL_FreeSurface(LoadedSurface);
-
+//differ
     return OptimizedTexture;
 }

@@ -9,7 +9,7 @@ void Cleanup(){
 		SDL_DestroyWindow(Window);
 		Window = NULL;
 	}
-
-	//IMG_Quit();
+	//differ
+	IMG_Quit();
 	SDL_Quit();
 }
