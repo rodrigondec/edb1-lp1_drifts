@@ -14,7 +14,7 @@ enum{
     IMG_REWIND, IMG_USERLIFE, IMG_PLAY, IMG_PAUSE, IMG_PLAYAGAIN, IMG_SOUNDON, IMG_SOUNDOFF, 
     IMG_PLAYER, IMG_POINTER, IMG_MURDERER, IMG_SAVER, TOTAL_IMG
 };
-//differ
+
 struct Bola{
     bool attached;
     string tipo;
@@ -26,9 +26,7 @@ struct Player{
     int score;
     SDL_Rect Icon;
     SDL_Rect Life;
-    SDL_Rect Score1;
-    SDL_Rect Score2;
-    SDL_Rect Score3;
+    SDL_Rect Score;
     SDL_Rect Rect;
 };
 

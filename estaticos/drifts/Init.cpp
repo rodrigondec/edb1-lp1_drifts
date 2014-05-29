@@ -123,21 +123,10 @@ bool Init(){
     player.Life.w = 50;
     player.Life.h = 50;
 
-    player.Score1.x = 265;
-    player.Score1.y = 3;
-    player.Score1.w = 50;
-    player.Score1.h = 50;
-
-    player.Score2.x = 285;
-    player.Score2.y = 3;
-    player.Score2.w = 50;
-    player.Score2.h = 50;
-
-    player.Score3.x = 305;
-    player.Score3.y = 3;
-    player.Score3.w = 50;
-    player.Score3.h = 50;
-
+    player.Score.x = 265;
+    player.Score.y = 3;
+    player.Score.w = 50;
+    player.Score.h = 50;
 
     startgameRect.x = 220;
     startgameRect.y = 200;
@@ -150,5 +139,7 @@ bool Init(){
     rewindRect.h = 35;
 //++++++++++++++ END VAR'S +++++++++++++++++++++++++++++++++++++++++++//
     system("cls");
+    system("clear");
+
     return true;
 }
