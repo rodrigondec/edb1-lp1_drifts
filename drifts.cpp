@@ -15,6 +15,7 @@ enum{
     IMG_PLAYER, IMG_POINTER, IMG_MURDERER, IMG_SAVER, TOTAL_IMG
 };
 
+
 struct Bola{
     bool attached;
     string tipo;
