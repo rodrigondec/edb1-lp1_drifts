@@ -18,10 +18,6 @@ void OnEvent(SDL_Event* Event){
                     player.Rect.y > startgameRect.y && player.Rect.y < (startgameRect.y + startgameRect.h)){
                 screen = 2;
             }
-
-//differ
-
-
         }
     }
     else if(screen == 2){
@@ -29,6 +25,4 @@ void OnEvent(SDL_Event* Event){
         	SDL_GetMouseState(&player.Rect.x, &player.Rect.y);
     	}
     }
-    
-    
 }

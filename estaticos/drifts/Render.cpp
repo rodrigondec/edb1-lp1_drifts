@@ -120,7 +120,7 @@ void Render(){
 			player.Score.x += 20;
 		}
 	//---------------------------------------------- BOLAS ---------------------------------------------------------------
-		for(unsigned i; i < bolas.size(); i++){
+		for(unsigned i = 0; i < bolas.size(); i++){
 			if(bolas[i].tipo == "pointer"){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[i].Rect);
 			}
