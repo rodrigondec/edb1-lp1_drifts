@@ -22,6 +22,13 @@ struct Bola{
 };
 
 struct Player{
+    int life;
+    int score;
+    SDL_Rect Icon;
+    SDL_Rect Life;
+    SDL_Rect Score1;
+    SDL_Rect Score2;
+    SDL_Rect Score3;
     SDL_Rect Rect;
 };
 
@@ -51,9 +58,9 @@ int main(int argc, char* argv[]) {
     //while(1){
         create_bola();
         bolas[0].attached = true;
-        create_bola();
+        //create_bola();
         cout<<"bolas[0].rect.x = "<<bolas[0].attached<<endl;
-        cout<<"bolas[1].rect.x = "<<bolas[1].attached<<endl;
+        //cout<<"bolas[1].rect.x = "<<bolas[1].attached<<endl;
     //}
     while(Running) {
         while(SDL_PollEvent(&Event) != 0) {

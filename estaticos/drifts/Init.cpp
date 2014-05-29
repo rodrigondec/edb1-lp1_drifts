@@ -37,7 +37,7 @@ bool Init(){
 //+++++++++++++++++ END PNG LIB +++++++++++++++++++++++++++++++++++++++++//
 
 //+++++++++++++++++ SETANDO ICONE DO APP ++++++++++++++++++++++++++++++++//    
-    SDL_Surface* loadsurf = IMG_Load("C:/Users/Rodrigo/Downloads/prog/drifts/images/balls/player.png");
+    SDL_Surface* loadsurf = IMG_Load("images/balls/player.png");
     
     SDL_SetWindowIcon(Window, loadsurf);
 
@@ -107,18 +107,47 @@ bool Init(){
     Running = true;
     screen = 0;
 
+    player.life = 3;
+    player.score = 245;
+
     player.Rect.w = 45;//Mouse Width
     player.Rect.h = 45;//Mouse Height
 
-    startgameRect.y = ((WindowHeight-120)/2);
-    startgameRect.x = -50;
-    startgameRect.w = 800;
+    player.Icon.x = 560;
+    player.Icon.y = 10;
+    player.Icon.w = 35;
+    player.Icon.h = 35;
+
+    player.Life.x = 595;
+    player.Life.y = 3;
+    player.Life.w = 50;
+    player.Life.h = 50;
+
+    player.Score1.x = 265;
+    player.Score1.y = 3;
+    player.Score1.w = 50;
+    player.Score1.h = 50;
+
+    player.Score2.x = 285;
+    player.Score2.y = 3;
+    player.Score2.w = 50;
+    player.Score2.h = 50;
+
+    player.Score3.x = 305;
+    player.Score3.y = 3;
+    player.Score3.w = 50;
+    player.Score3.h = 50;
+
+
+    startgameRect.x = 220;
+    startgameRect.y = 200;
+    startgameRect.w = 200;
     startgameRect.h = 80;
 
     rewindRect.x = 10;
     rewindRect.y = 10;
-    rewindRect.w = 80;
-    rewindRect.h = 80;
+    rewindRect.w = 35;
+    rewindRect.h = 35;
 //++++++++++++++ END VAR'S +++++++++++++++++++++++++++++++++++++++++++//
     system("cls");
     return true;
