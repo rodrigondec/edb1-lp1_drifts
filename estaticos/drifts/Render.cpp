@@ -67,6 +67,18 @@ void Render(){
   	else if(screen == 2){
   	//---------------------------------------------- BACKGROUND ----------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
+	//---------------------------------------------- BOLAS ---------------------------------------------------------------
+		for(unsigned i = 0; i < bolas.size(); i++){
+			if(bolas[i].tipo == "pointer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[i].Rect);
+			}
+			else if(bolas[i].tipo == "murderer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[i].Rect);
+			}
+			else if(bolas[i].tipo == "saver"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[i].Rect);
+			}
+		}
 	//---------------------------------------------- MOUSE ---------------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
 	//---------------------------------------------- ICON LIFE + LIFE ----------------------------------------------------
@@ -118,20 +130,7 @@ void Render(){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_9], NULL, &player.Score);
 			}
 			player.Score.x += 20;
-		}
-	//---------------------------------------------- BOLAS ---------------------------------------------------------------
-		for(unsigned i = 0; i < bolas.size(); i++){
-			if(bolas[i].tipo == "pointer"){
-				SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[i].Rect);
-			}
-			else if(bolas[i].tipo == "murderer"){
-				SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[i].Rect);
-			}
-			else if(bolas[i].tipo == "saver"){
-				SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[i].Rect);
-			}
-		}
-		//SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[0].Rect);			
+		}		
   	}
   	SDL_RenderPresent(Renderer);
 }
