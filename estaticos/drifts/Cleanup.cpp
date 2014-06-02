@@ -1,15 +1,14 @@
-void Cleanup(){
+void Drifts::Cleanup(){
 
-	if(Renderer) {
+	if(Renderer){
 		SDL_DestroyRenderer(Renderer);
 		Renderer = NULL;
 	}
 
-	if(Window) {
+	if(Window){
 		SDL_DestroyWindow(Window);
 		Window = NULL;
 	}
-	//differ
 	IMG_Quit();
 	SDL_Quit();
 }

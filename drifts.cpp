@@ -15,63 +15,20 @@ enum{
     IMG_PLAYER, IMG_POINTER, IMG_MURDERER, IMG_SAVER, TOTAL_IMG
 };
 
-
-struct Bola{
-    bool attached;
-    string tipo;
-    SDL_Rect Rect;
-};
-
-struct Player{
-    int life;
-    int score;
-    SDL_Rect Icon;
-    SDL_Rect Life;
-    SDL_Rect Score;
-    SDL_Rect Rect;
-};
-
-bool Running;
-int screen;
-
-vector <Bola> bolas;
-Player player;
-
-const int WindowWidth = 640;
-const int WindowHeight = 480;
-
-SDL_Window* Window = NULL;
-SDL_Texture* TextureBank[TOTAL_IMG] = {};
-SDL_Renderer* Renderer = NULL;
-SDL_Event Event;
-
-SDL_Rect startgameRect;
-SDL_Rect rewindRect;
-
 #include "estaticos/includes_templates.h"
 
+Drifts::Drifts(){
+    WindowWidth = 640;
+    WindowHeight = 480;
+
+    Window = NULL;
+    Renderer = NULL;
+}
+
+Drifts::~Drifts(){}
+
 int main(int argc, char* argv[]) {
-    if(!Init()) {
-        return 0;
-    }
-    //while(1){
-        create_bola();
-        bolas[0].attached = true;
-        //create_bola();
-        cout<<"bolas[0].rect.x = "<<bolas[0].attached<<endl;
-        //cout<<"bolas[1].rect.x = "<<bolas[1].attached<<endl;
-    //}
-    while(Running) {
-        while(SDL_PollEvent(&Event) != 0) {
-            OnEvent(&Event);
-        }
-
-        Loop();
-        Render();
-
-        SDL_Delay(1); // Breath
-    }
-
-    Cleanup();
-    return 1;
+    Drifts drift;
+    drift.Run();
+    return 0;
 }

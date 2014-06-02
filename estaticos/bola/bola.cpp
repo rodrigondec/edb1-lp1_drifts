@@ -1,5 +1,3 @@
-#include "bola.h"
-#undef main
 Bola::Bola(){
 	int randomx, randomt;
 
@@ -46,8 +44,10 @@ int Bola::get_y(){
 	return Rect.y;
 }
 
-int main(){
-	Bola bola1;
-	std::cout<<bola1.get_x();
-	return 0;
+string Bola::get_type(){
+	return tipo;
+}
+
+SDL_Rect* Bola::get_rect(){
+	return &Rect;
 }

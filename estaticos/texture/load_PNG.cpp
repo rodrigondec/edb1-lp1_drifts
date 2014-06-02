@@ -1,4 +1,4 @@
-SDL_Texture* load_PNG(string path){
+SDL_Texture* Drifts::load_PNG(string path){
     SDL_Texture* OptimizedTexture = NULL;
     SDL_Surface* LoadedSurface = IMG_Load( path.c_str() );
 

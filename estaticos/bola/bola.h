@@ -1,14 +1,5 @@
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_image.h>
-#include <string>
-#include <iostream>
-#include <cstdlib>
-#include <vector>
-
 #ifndef __BOLA_H__
 	#define __BOLA_H__
-
-using std::string;
 
 class Bola{
 	private:
@@ -25,6 +16,8 @@ class Bola{
 
 		int get_x();
 		int get_y();
+		SDL_Rect* get_rect();
+		string get_type();
 };
 
 #endif

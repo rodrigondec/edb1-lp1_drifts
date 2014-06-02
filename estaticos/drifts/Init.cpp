@@ -1,4 +1,4 @@
-bool Init(){
+bool Drifts::Init(){
 //+++++++++++++++++ INITIALIZING VIDEO ++++++++++++++++++++++++++++++++++++//
 	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
         cout<<"Unable to Init SDL: "<<SDL_GetError();
@@ -106,27 +106,6 @@ bool Init(){
 //++++++++++++++ SETING VAR'S +++++++++++++++++++++++++++++++++++++++++//
     Running = true;
     screen = 0;
-
-    player.life = 3;
-    player.score = 245;
-
-    player.Rect.w = 45;//Mouse Width
-    player.Rect.h = 45;//Mouse Height
-
-    player.Icon.x = 560;
-    player.Icon.y = 10;
-    player.Icon.w = 35;
-    player.Icon.h = 35;
-
-    player.Life.x = 595;
-    player.Life.y = 3;
-    player.Life.w = 50;
-    player.Life.h = 50;
-
-    player.Score.x = 265;
-    player.Score.y = 3;
-    player.Score.w = 50;
-    player.Score.h = 50;
 
     startgameRect.x = 220;
     startgameRect.y = 200;
