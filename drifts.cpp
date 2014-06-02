@@ -28,7 +28,7 @@ Drifts::Drifts(){
 Drifts::~Drifts(){}
 
 int main(int argc, char* argv[]) {
-    Drifts drift;
-    drift.Run();
+    Drifts jogo;
+    jogo.Run();
     return 0;
 }

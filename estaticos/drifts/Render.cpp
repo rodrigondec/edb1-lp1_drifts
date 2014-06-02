@@ -3,7 +3,7 @@ void Drifts::Render(){
 //================================================== TELA INICIAL =========================================================
   	if(screen == 0){
 		SDL_RenderCopy(Renderer, TextureBank[IMG_INITIALSCREEN], NULL, NULL);
-  	}//differ
+  	}
 //================================================== MENU ================================================================
   	else if(screen == 1){
   	//---------------------------------------------- BACKGROUND ---------------------------------------------------------
@@ -11,21 +11,21 @@ void Drifts::Render(){
 	//---------------------------------------------- REWIND ICON ---------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_REWIND], NULL, &rewindRect);
 	//-------------------------------------------- ICON LIFE + LIFE ------------------------------------------------------
-		/*SDL_RenderCopy(Renderer, TextureBank[IMG_USERLIFE], NULL, &player.Icon);
-		if(player.life == 3){
+		SDL_RenderCopy(Renderer, TextureBank[IMG_USERLIFE], NULL, &player.Icon);
+		if(player.get_life() == 3){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &player.Life);
 		}
-		else if(player.life == 2){
+		else if(player.get_life() == 2){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &player.Life);
 		}
-		else if(player.life == 1){
+		else if(player.get_life() == 1){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &player.Life);
-		}*/
+		}
 	//---------------------------------------------- player.score --------------------------------------------------------------
-		//int temp_score;
-		//int score = player.score;
-		//player.Score.x = 265;
-		/*while(score > 0){
+		int temp_score;
+		int score = player.get_score();
+		player.reset_x_rscore();
+		while(score > 0){
 			temp_score = score%10;
 			score /= 10;
 			if(temp_score == 0){
@@ -59,7 +59,7 @@ void Drifts::Render(){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_9], NULL, &player.Score);
 			}
 			player.Score.x += 20;
-		}*/
+		}
 	//---------------------------------------------- START GAME ---------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_STARTGAME], NULL, &startgameRect);
   	}
@@ -80,23 +80,23 @@ void Drifts::Render(){
 			}
 		}*/
 	//---------------------------------------------- MOUSE ---------------------------------------------------------------
-		//SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
 	//---------------------------------------------- ICON LIFE + LIFE ----------------------------------------------------
-		/*SDL_RenderCopy(Renderer, TextureBank[IMG_USERLIFE], NULL, &player.Icon);
-		if(player.life == 3){
+		SDL_RenderCopy(Renderer, TextureBank[IMG_USERLIFE], NULL, &player.Icon);
+		if(player.get_life() == 3){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &player.Life);
 		}
-		else if(player.life == 2){
+		else if(player.get_life() == 2){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &player.Life);
 		}
-		else if(player.life == 1){
+		else if(player.get_life() == 1){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &player.Life);
-		}*/
+		}
 	//---------------------------------------------- player.score --------------------------------------------------------------
-		//int temp_score;
-		//int score = player.score;
-		//player.Score.x = 265;
-		/*while(score > 0){
+		int temp_score;
+		int score = player.get_score();
+		player.reset_x_rscore();
+		while(score > 0){
 			temp_score = score%10;
 			score /= 10;
 			if(temp_score == 0){
@@ -130,7 +130,7 @@ void Drifts::Render(){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_9], NULL, &player.Score);
 			}
 			player.Score.x += 20;
-		}	*/	
+		}	
   	}
   	SDL_RenderPresent(Renderer);
 }

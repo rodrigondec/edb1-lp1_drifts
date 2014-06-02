@@ -20,20 +20,25 @@ Player::Player(){
     Score.w = 50;
     Score.h = 50;
 }
+
 Player::~Player(){}
 
 void Player::reset_life(){
 	life = 3;
 }
+
+void Player::reset_score(){
+    score = 0;
+}
+
 void Player::death(){
 	life--;
 }
+
 void Player::reset_x_rscore(){
 	Score.x = 265;
 }
-void Player::incr_x_rscore(int n){
-	Score.x += n;
-}
+
 void Player::incr_score(int n){
 	score += n;
 }
@@ -41,24 +46,7 @@ void Player::incr_score(int n){
 int Player::get_life(){
 	return life;
 }
+
 int Player::get_score(){
 	return score;
-}
-SDL_Rect* Player::get_ricon(){
-	return &Icon;
-}
-SDL_Rect* Player::get_rlife(){
-	return &Life;
-}
-SDL_Rect* Player::get_rscore(){
-	return &Score;
-}
-SDL_Rect* Player::get_rrect(){
-	return &Rect;
-}
-int* Player::get_rrect_x(){
-	return &Rect.x;
-}
-int* Player::get_rrect_y(){
-	return &Rect.y;
 }
