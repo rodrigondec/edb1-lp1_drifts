@@ -5,18 +5,17 @@ class Bola{
 	private:
 		bool attached;
     	string tipo;
-    	SDL_Rect Rect;
 
 	public:
+		SDL_Rect Rect;
+
 		Bola();
 		~Bola();
 
 		void mover();
-		void colision();
+		void attach();
+		bool get_status();
 
-		int get_x();
-		int get_y();
-		SDL_Rect* get_rect();
 		string get_type();
 };
 

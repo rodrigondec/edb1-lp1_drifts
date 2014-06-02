@@ -1,0 +1,3 @@
+void Drifts::Collision(){
+
+}

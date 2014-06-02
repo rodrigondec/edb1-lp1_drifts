@@ -26,6 +26,7 @@ class Drifts{
 
 		SDL_Texture* load_PNG(string path);
 
+		void Collision();
 		void Run();
 		void Cleanup();
 		void Create_Bola();
@@ -33,8 +34,6 @@ class Drifts{
 		void Loop();
 		void OnEvent(SDL_Event* Event);
 		void Render();
-
-		
 };
 
 #endif

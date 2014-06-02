@@ -68,17 +68,17 @@ void Drifts::Render(){
   	//---------------------------------------------- BACKGROUND ----------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
 	//---------------------------------------------- BOLAS ---------------------------------------------------------------
-		/*for(unsigned i = 0; i < bolas.size(); i++){
-			if(bolas[i].tipo == "pointer"){
+		for(unsigned i = 0; i < bolas.size(); i++){
+			if(bolas[i].get_type() == "pointer"){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[i].Rect);
 			}
-			else if(bolas[i].tipo == "murderer"){
+			else if(bolas[i].get_type() == "murderer"){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[i].Rect);
 			}
-			else if(bolas[i].tipo == "saver"){
+			else if(bolas[i].get_type() == "saver"){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[i].Rect);
 			}
-		}*/
+		}
 	//---------------------------------------------- MOUSE ---------------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
 	//---------------------------------------------- ICON LIFE + LIFE ----------------------------------------------------

@@ -32,22 +32,14 @@ void Bola::mover(){
 	Rect.y = Rect.y;
 }
 
-void Bola::colision(){
-
+void Bola::attach(){
+	attached = true;
 }
 
-int Bola::get_x(){
-	return Rect.x;
-}
-
-int Bola::get_y(){
-	return Rect.y;
+bool Bola::get_status(){
+	return attached;
 }
 
 string Bola::get_type(){
 	return tipo;
-}
-
-SDL_Rect* Bola::get_rect(){
-	return &Rect;
 }
