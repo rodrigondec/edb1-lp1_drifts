@@ -24,9 +24,12 @@ class Drifts{
 		Drifts();
 		~Drifts();
 
+		int checker_create_bola;
+
 		SDL_Texture* load_PNG(string path);
 
 		void Collision();
+		int get_secs();
 		void Run();
 		void Cleanup();
 		void Create_Bola();

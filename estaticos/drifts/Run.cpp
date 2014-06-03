@@ -3,12 +3,14 @@ void Drifts::Run(){
         return;
     }
     
-
     Create_Bola(); 
-    cout<<bolas[0].get_type();
+    cout<<bolas[0].get_type()<<endl;
+    
+    cout<<rand()<<endl;
+    cout<<get_secs()<<endl;
 
     while(Running) {
-        while(SDL_PollEvent(&Event) != 0) {
+        while(SDL_PollEvent(&Event) != 0){
             OnEvent(&Event);
         }
 

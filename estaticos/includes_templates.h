@@ -7,6 +7,7 @@
 #include "drifts/drifts.h"
 
 #include "texture/load_PNG.cpp"
+#include "drifts/GetSecs.cpp"
 #include "drifts/Collision.cpp"
 #include "drifts/Run.cpp"
 #include "drifts/CreateBola.cpp"

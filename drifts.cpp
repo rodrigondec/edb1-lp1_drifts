@@ -23,6 +23,10 @@ Drifts::Drifts(){
 
     Window = NULL;
     Renderer = NULL;
+
+    checker_create_bola = 1;
+
+    srand(time(NULL));
 }
 
 Drifts::~Drifts(){}
