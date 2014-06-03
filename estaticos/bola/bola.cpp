@@ -1,14 +1,10 @@
 Bola::Bola(){
 	int randomx, randomt;
 
-	randomx = 0;
+	randomx = rand()%640;
 
 
-
-	randomt = 1;
-
-
-
+	randomt = (rand()%3)+1;
 	if(randomt == 1){
 		tipo = "pointer";
 	}
