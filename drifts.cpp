@@ -25,7 +25,7 @@ Drifts::Drifts(){
     Renderer = NULL;
 
     checker_create_bola = true;
-    checker_move_bola = true;
+    checker_move_bola = 1;
     clock_spawn = 5;
 
     srand(time(NULL));

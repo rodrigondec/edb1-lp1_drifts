@@ -14,15 +14,17 @@ void Drifts::Loop(){
 	        checker_create_bola = true;
 	    }
 
-	    if(checker_move_bola){
+	    if(checker_move_bola == 1){
 	    	for(unsigned i = 0; i < bolas.size(); i++){
 				bolas[i].mover();
 			}
-			checker_move_bola = false;
+			checker_move_bola = 2;
 	    }
-	    else{
-	    	checker_move_bola = true;
+	    else if(checker_move_bola == 2){
+	    	checker_move_bola = 3;
 	    }
-	    
+	    else if(checker_move_bola == 3){
+	    	checker_move_bola = 1;
+	    }
 	}
 }
