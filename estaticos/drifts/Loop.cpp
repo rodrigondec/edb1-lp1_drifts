@@ -13,7 +13,7 @@ void Drifts::Loop(){
 	    else if(get_secs()%clock_spawn != 0){
 	        checker_create_bola = true;
 	    }
-
+	    
 	    if(checker_move_bola == 1){
 	    	for(unsigned i = 0; i < bolas.size(); i++){
 				bolas[i].mover();

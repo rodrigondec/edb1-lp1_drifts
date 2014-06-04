@@ -14,8 +14,7 @@ Bola::Bola(){
 		tipo = "saver";
 	}
 
-	accel_x = rand()%2;
-	accel_y = rand()%2;
+	direct_x = rand()%2;
 	attached = false;
 	Rect.x = randomx;
 	Rect.y = 0;
@@ -26,19 +25,15 @@ Bola::Bola(){
 Bola::~Bola(){}
 
 void Bola::mover(){
-	if(accel_x){
+	if(direct_x){
 		Rect.x += 1;
 	}
 	else{
 		Rect.x -= 1;
 	}
 
-	if(accel_y){
-		Rect.y += 1;
-	}
-	else{
-		Rect.y -= 1;
-	}
+	Rect.y += 1;
+
 }
 
 void Bola::attach(){
@@ -49,12 +44,8 @@ bool Bola::get_status(){
 	return attached;
 }
 
-bool Bola::get_accel_x(){
-	return accel_x;
-}
-
-bool Bola::get_accel_y(){
-	return accel_y;
+bool Bola::get_direct_x(){
+	return direct_x;
 }
 
 string Bola::get_type(){
