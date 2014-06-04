@@ -24,7 +24,7 @@ class Drifts{
 		Drifts();
 		~Drifts();
 
-		int checker_create_bola;
+		bool checker_create_bola;
 		int clock_spawn;
 
 		SDL_Texture* load_PNG(string path);

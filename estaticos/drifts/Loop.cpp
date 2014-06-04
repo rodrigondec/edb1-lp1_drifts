@@ -8,10 +8,10 @@ void Drifts::Loop(){
 			}
 			
 			//Create_Bola(); //1 bola por tick
-        checker_create_bola = 0;
+        checker_create_bola = false;
 	    }
 	    else if(get_secs()%clock_spawn != 0){
-	        checker_create_bola = 1;
+	        checker_create_bola = true;
 	    }
 
 
