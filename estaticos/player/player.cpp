@@ -1,6 +1,6 @@
 Player::Player(){
 	life = 3;
-    score = 245;
+    score = 0;
 
     Rect.w = 45;//Mouse Width
     Rect.h = 45;//Mouse Height

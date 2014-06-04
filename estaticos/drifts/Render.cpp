@@ -25,7 +25,7 @@ void Drifts::Render(){
 		int temp_score;
 		int score = player.get_score();
 		player.reset_x_rscore();
-		while(score > 0){
+		do{
 			temp_score = score%10;
 			score /= 10;
 			if(temp_score == 0){
@@ -58,8 +58,8 @@ void Drifts::Render(){
 			else if(temp_score == 9){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_9], NULL, &player.Score);
 			}
-			player.Score.x += 20;
-		}
+			player.Score.x -= 20;
+		}while(score > 0);
 	//---------------------------------------------- START GAME ---------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_STARTGAME], NULL, &startgameRect);
   	}
@@ -96,7 +96,7 @@ void Drifts::Render(){
 		int temp_score;
 		int score = player.get_score();
 		player.reset_x_rscore();
-		while(score > 0){
+		do{
 			temp_score = score%10;
 			score /= 10;
 			if(temp_score == 0){
@@ -129,8 +129,8 @@ void Drifts::Render(){
 			else if(temp_score == 9){
 				SDL_RenderCopy(Renderer, TextureBank[IMG_9], NULL, &player.Score);
 			}
-			player.Score.x += 20;
-		}	
+			player.Score.x -= 20;
+		}while(score > 0);	
   	}
   	SDL_RenderPresent(Renderer);
 }

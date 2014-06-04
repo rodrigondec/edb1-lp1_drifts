@@ -27,17 +27,17 @@ Bola::~Bola(){}
 
 void Bola::mover(){
 	if(accel_x){
-		Rect.x += 2;
+		Rect.x += 1;
 	}
 	else{
-		Rect.x -= 2;
+		Rect.x -= 1;
 	}
 
 	if(accel_y){
-		Rect.y += 2;
+		Rect.y += 1;
 	}
 	else{
-		Rect.y -= 2;
+		Rect.y -= 1;
 	}
 }
 
