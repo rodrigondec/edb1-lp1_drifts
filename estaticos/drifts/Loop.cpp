@@ -13,10 +13,17 @@ void Drifts::Loop(){
 	    else if(get_secs()%clock_spawn != 0){
 	        checker_create_bola = true;
 	    }
-	    
+
 	    if(checker_move_bola == 1){
 	    	for(unsigned i = 0; i < bolas.size(); i++){
 				bolas[i].mover();
+				if(bolas[i].Rect.x < 0 || bolas[i].Rect.x > WindowWidth){
+					bolas.erase(bolas.begin()+i);
+					continue;
+				}
+				if(bolas[i].Rect.y > WindowHeight){
+					bolas.erase(bolas.begin()+i);
+				}
 			}
 			checker_move_bola = 2;
 	    }

@@ -33,7 +33,7 @@ Drifts::Drifts(){
 
 Drifts::~Drifts(){}
 
-int main(int argc, char* argv[]) {
+int main(int argc, char* argv[]){
     Drifts jogo;
     jogo.Run();
     return 0;
