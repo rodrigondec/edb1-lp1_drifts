@@ -17,7 +17,7 @@ void Drifts::Loop(){
 	    if(checker_move_bola == 1){
 	    	for(unsigned i = 0; i < bolas.size(); i++){
 				bolas[i].mover();
-				if(bolas[i].Rect.x < 0 || bolas[i].Rect.x > WindowWidth){
+				if(bolas[i].Rect.x < -35 || bolas[i].Rect.x > WindowWidth){
 					bolas.erase(bolas.begin()+i);
 					continue;
 				}
