@@ -1,7 +1,7 @@
 void Drifts::Loop(){
 	if(screen == 2){
 		if(get_secs()%clock_spawn == 0 && checker_create_bola){
-			int i = (rand()%3)+1;
+			int i = (rand()%7)+3;
 			while(i > 0){ //random 1~3 bolas por tick
 				Create_Bola();
 				i -= 1;
@@ -23,6 +23,22 @@ void Drifts::Loop(){
 				}
 				if(bolas[i].Rect.y > WindowHeight){
 					bolas.erase(bolas.begin()+i);
+					continue;
+				}
+				invert_accel = rand()%100;
+				if(invert_accel < 4){
+					invert_accel = rand()%5;
+					if(invert_accel == 0){
+						bolas[i].invert_accel_x();
+						bolas[i].invert_accel_y();
+					}
+					else if(invert_accel == 1){
+						bolas[i].invert_accel_x();
+					}
+					else if(invert_accel == 2){
+						bolas[i].invert_accel_y();
+					}
+					bolas[i].parada();
 				}
 			}
 			checker_move_bola = 2;

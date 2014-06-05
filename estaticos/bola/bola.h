@@ -5,7 +5,8 @@ class Bola{
 	private:
 		bool attached;
     	string tipo;
-    	bool direct_x;
+    	int accel_x;
+    	int accel_y;
 
 	public:
 		SDL_Rect Rect;
@@ -15,8 +16,12 @@ class Bola{
 
 		void mover();
 		void attach();
+		void invert_accel_x();
+		void invert_accel_y();
+		void parada();
 		bool get_status();
-		bool get_direct_x();
+		int get_accel_x();
+		int get_accel_y();
 		string get_type();
 };
 

@@ -27,6 +27,7 @@ class Drifts{
 		bool checker_create_bola;
 		int checker_move_bola;
 		int clock_spawn;
+		int invert_accel;
 
 		SDL_Texture* load_PNG(string path);
 
