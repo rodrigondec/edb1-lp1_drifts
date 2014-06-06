@@ -117,8 +117,6 @@ bool Drifts::Init(){
     gameoverRect.w = 400;
     gameoverRect.h = 160;
 
-    letraRect.x = 200;
-    letraRect.y = 300;
     letraRect.w = 45;
     letraRect.h = 45;
 

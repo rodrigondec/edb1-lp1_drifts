@@ -11,6 +11,13 @@ void Drifts::Loop(){
 			player.reset_score();
 			SDL_ShowCursor(1);
 		}
+		// ------------------- IS NOT ENOUGH POINTERS? -----------------------------------------
+		if(get_more_pointers >= 1 && get_more_pointers <= 2599){
+			get_more_pointers++;
+		} 
+		else if(get_more_pointers == (2600)){
+			get_more_pointers = 0;
+		}
 		// ------------------- IS BOLA SPAWN TIME? -----------------------------------------------
 		if(get_secs()%clock_spawn == 0 && checker_create_bola){
 			int i = (rand()%7)+3;
@@ -69,74 +76,8 @@ void Drifts::Loop(){
 			}
 			checker_move_bola = 2;
 	    }
-	    else if(checker_move_bola == 2){
-	    	checker_move_bola = 3;
-	    }
-	    else if(checker_move_bola == 3){
-	    	checker_move_bola = 4;
-	    }
-	    else if(checker_move_bola == 4){
-	    	checker_move_bola = 5;
-	    }
-	    else if(checker_move_bola == 5){
-	    	checker_move_bola = 6;
-	    }
-	    else if(checker_move_bola == 6){
-	    	checker_move_bola = 7;
-	    }
-	    else if(checker_move_bola == 7){
-	    	checker_move_bola = 8;
-	    }
-	    else if(checker_move_bola == 8){
-	    	checker_move_bola = 9;
-	    }
-	    else if(checker_move_bola == 9){
-	    	checker_move_bola = 10;
-	    }
-	    else if(checker_move_bola == 10){
-	    	checker_move_bola = 11;
-	    }
-	    else if(checker_move_bola == 11){
-	    	checker_move_bola = 12;
-	    }
-	    else if(checker_move_bola == 12){
-	    	checker_move_bola = 13;
-	    }
-	    else if(checker_move_bola == 13){
-	    	checker_move_bola = 14;
-	    }
-	    else if(checker_move_bola == 14){
-	    	checker_move_bola = 15;
-	    }
-	    else if(checker_move_bola == 15){
-	    	checker_move_bola = 16;
-	    }
-	    else if(checker_move_bola == 16){
-	    	checker_move_bola = 17;
-	    }
-	    else if(checker_move_bola == 17){
-	    	checker_move_bola = 18;
-	    }
-	    else if(checker_move_bola == 18){
-	    	checker_move_bola = 19;
-	    }
-	    else if(checker_move_bola == 19){
-	    	checker_move_bola = 20;
-	    }
-	    else if(checker_move_bola == 20){
-	    	checker_move_bola = 21;
-	    }
-	    else if(checker_move_bola == 21){
-	    	checker_move_bola = 22;
-	    }
-	    else if(checker_move_bola == 22){
-	    	checker_move_bola = 23;
-	    }
-	    else if(checker_move_bola == 23){
-	    	checker_move_bola = 24;
-	    }
-	    else if(checker_move_bola == 24){
-	    	checker_move_bola = 25;
+	    else if(checker_move_bola >= 2 && checker_move_bola <= 24){
+	    	checker_move_bola++;
 	    }
 	    else if(checker_move_bola == 25){
 	    	checker_move_bola = 1;

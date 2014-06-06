@@ -81,6 +81,55 @@ void Drifts::Render(){
 		}
 	//---------------------------------------------- MOUSE ---------------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
+	//---------------------------------------------- GET MORE POINTERS ? -------------------------------------------------
+		if(get_more_pointers >= 1 && get_more_pointers <= 2599){
+			letraRect.x = (player.Rect.x - 160);
+			letraRect.y = (player.Rect.y - 40);
+			SDL_RenderCopy(Renderer, TextureBank[IMG_G], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_T], NULL, &letraRect);
+			letraRect.x += 30;
+			if(counter_pointers == 0){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &letraRect);
+			}
+			else if(counter_pointers == 1){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &letraRect);
+			}
+			else if(counter_pointers == 2){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &letraRect);
+			}
+			letraRect.x += 30;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_M], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_O], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect.x += 20;
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_P], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_O], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_I], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_N], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_T], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
+			letraRect.x += 20;
+			if(counter_pointers != 2){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_S], NULL, &letraRect);
+				letraRect.x += 20;
+			}
+		}
+		
 	//---------------------------------------------- ICON LIFE + LIFE ----------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_USERLIFE], NULL, &player.Icon);
 		if(player.get_life() == 3){
@@ -141,6 +190,7 @@ void Drifts::Render(){
 		SDL_RenderCopy(Renderer, TextureBank[IMG_GAMEOVER], NULL, &gameoverRect);
 		//---------------------------------------------- PLAY AGAIN ---------------------------------------------------------
 		letraRect.x = 200;
+		letraRect.y = 300;
 		SDL_RenderCopy(Renderer, TextureBank[IMG_P], NULL, &letraRect);
 		letraRect.x += 20;
 		SDL_RenderCopy(Renderer, TextureBank[IMG_L], NULL, &letraRect);

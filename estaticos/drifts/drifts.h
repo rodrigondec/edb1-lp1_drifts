@@ -30,6 +30,8 @@ class Drifts{
 		int checker_move_bola;
 		int clock_spawn;
 		int invert_accel;
+		int get_more_pointers;
+		int counter_pointers;
 
 		SDL_Texture* load_PNG(string path);
 
