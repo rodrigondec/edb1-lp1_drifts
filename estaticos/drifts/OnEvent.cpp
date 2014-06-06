@@ -25,6 +25,12 @@ void Drifts::OnEvent(SDL_Event* Event){
     	if(Event->type == SDL_MOUSEMOTION){
         	SDL_GetMouseState(&player.Rect.x, &player.Rect.y);
     	}
+        if(Event->type == SDL_MOUSEBUTTONDOWN && Event->button.button == SDL_BUTTON_LEFT){
+            if(player.Rect.x > pauseplayRect.x && player.Rect.x < (pauseplayRect.x + pauseplayRect.w) && 
+               player.Rect.y > pauseplayRect.y && player.Rect.y < (pauseplayRect.y + pauseplayRect.h)){
+                paused = !paused;
+            }
+        }
     }
     else if(screen == 3){
         if(Event->type == SDL_MOUSEBUTTONDOWN && Event->button.button == SDL_BUTTON_LEFT){

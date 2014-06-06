@@ -17,6 +17,7 @@ class Drifts{
 		SDL_Rect startgameRect;
 		SDL_Rect gameoverRect;
 		SDL_Rect rewindRect;
+		SDL_Rect pauseplayRect;
 		SDL_Rect letraRect;
 
 		Player player;
@@ -27,6 +28,7 @@ class Drifts{
 		~Drifts();
 
 		bool checker_create_bola;
+		int paused;
 		int checker_move_bola;
 		int clock_spawn;
 		int invert_accel;

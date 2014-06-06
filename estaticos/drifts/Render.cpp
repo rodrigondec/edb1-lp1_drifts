@@ -67,6 +67,14 @@ void Drifts::Render(){
   	else if(screen == 2){
   	//---------------------------------------------- BACKGROUND ----------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
+	//---------------------------------------------- PLAY/PAUSE ICON -----------------------------------------------------
+		if(!paused){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_PAUSE], NULL, &pauseplayRect);
+		}
+		else{
+			SDL_RenderCopy(Renderer, TextureBank[IMG_PLAY], NULL, &pauseplayRect);
+		}
+		
 	//---------------------------------------------- BOLAS ---------------------------------------------------------------
 		for(unsigned i = 0; i < bolas.size(); i++){
 			if(bolas[i].get_type() == "pointer"){

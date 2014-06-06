@@ -120,6 +120,11 @@ bool Drifts::Init(){
     letraRect.w = 45;
     letraRect.h = 45;
 
+    pauseplayRect.x = 10;
+    pauseplayRect.y = 10;
+    pauseplayRect.w = 35;
+    pauseplayRect.h = 35;
+
     rewindRect.x = 10;
     rewindRect.y = 10;
     rewindRect.w = 35;
