@@ -14,6 +14,15 @@ void Drifts::Loop(){
 	        checker_create_bola = true;
 	    }
 
+	    for(unsigned i = 0; i < bolas.size(); i++){
+            if(player.Rect.x >= bolas[i].Rect.x && player.Rect.x <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+                player.Rect.y >= bolas[i].Rect.y && player.Rect.y <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+                Collision(i);
+            }
+
+
+        }
+
 	    if(checker_move_bola == 1){
 	    	for(unsigned i = 0; i < bolas.size(); i++){
 	    		if(!bolas[i].get_status()){

@@ -26,5 +26,6 @@ void Drifts::Collision(int indice){
 			}
 		}
 		player.death();
+		SDL_WarpMouseInWindow(Window, 295, 190);
 	}
 }
