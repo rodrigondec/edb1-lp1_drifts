@@ -16,30 +16,37 @@ void Drifts::Loop(){
 
 	    if(checker_move_bola == 1){
 	    	for(unsigned i = 0; i < bolas.size(); i++){
-				bolas[i].mover();
-				if(bolas[i].Rect.x < -35 || bolas[i].Rect.x > WindowWidth){
-					bolas.erase(bolas.begin()+i);
-					continue;
-				}
-				if(bolas[i].Rect.y > WindowHeight){
-					bolas.erase(bolas.begin()+i);
-					continue;
-				}
-				invert_accel = rand()%100;
-				if(invert_accel < 4){
-					invert_accel = rand()%5;
-					if(invert_accel == 0){
-						bolas[i].invert_accel_x();
-						bolas[i].invert_accel_y();
+	    		if(!bolas[i].get_status()){
+	    			bolas[i].mover();
+					if(bolas[i].Rect.x < -35 || bolas[i].Rect.x > WindowWidth){
+						bolas.erase(bolas.begin()+i);
+						i--;
+						continue;
 					}
-					else if(invert_accel == 1){
-						bolas[i].invert_accel_x();
+					if(bolas[i].Rect.y > WindowHeight){
+						bolas.erase(bolas.begin()+i);
+						i--;
+						continue;
 					}
-					else if(invert_accel == 2){
-						bolas[i].invert_accel_y();
+					invert_accel = rand()%100;
+					if(invert_accel < 4){
+						invert_accel = rand()%5;
+						if(invert_accel == 0){
+							bolas[i].invert_accel_x();
+							bolas[i].invert_accel_y();
+						}
+						else if(invert_accel == 1){
+							bolas[i].invert_accel_x();
+						}
+						else if(invert_accel == 2){
+							bolas[i].invert_accel_y();
+						}
+						bolas[i].parada();
 					}
-					bolas[i].parada();
-				}
+	    		}
+	    		else{
+	    			bolas[i].seguir_mouse(player.Rect.x, player.Rect.y);
+	    		}
 			}
 			checker_move_bola = 2;
 	    }

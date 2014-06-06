@@ -25,5 +25,13 @@ void Drifts::OnEvent(SDL_Event* Event){
     	if(Event->type == SDL_MOUSEMOTION){
         	SDL_GetMouseState(&player.Rect.x, &player.Rect.y);
     	}
+        for(unsigned i = 0; i < bolas.size(); i++){
+            if(player.Rect.x >= bolas[i].Rect.x && player.Rect.x <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+                player.Rect.y >= bolas[i].Rect.y && player.Rect.y <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+                Collision(i);
+            }
+
+
+        }
     }
 }

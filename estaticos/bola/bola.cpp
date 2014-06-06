@@ -45,8 +45,17 @@ void Bola::mover(){
 	Rect.y += accel_y;
 }
 
-void Bola::attach(){
+void Bola::attach(int mouse_x, int mouse_y){
+	bola_to_mouse[0] = Rect.x;
+	bola_to_mouse[1] = Rect.y;
+	bola_to_mouse[2] = mouse_x;
+	bola_to_mouse[3] = mouse_y;
 	attached = true;
+}
+
+void Bola::seguir_mouse(int mouse_x, int mouse_y){
+	Rect.x = bola_to_mouse[0]+(mouse_x - bola_to_mouse[2]);
+	Rect.y = bola_to_mouse[1]+(mouse_y - bola_to_mouse[3]);
 }
 
 void Bola::invert_accel_x(){

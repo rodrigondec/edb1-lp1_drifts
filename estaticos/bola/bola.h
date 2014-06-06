@@ -16,7 +16,8 @@ class Bola{
 		~Bola();
 
 		void mover();
-		void attach();
+		void attach(int mouse_x, int mouse_y);
+		void seguir_mouse(int mouse_x, int mouse_y);
 		void invert_accel_x();
 		void invert_accel_y();
 		void parada();

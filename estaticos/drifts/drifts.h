@@ -31,7 +31,7 @@ class Drifts{
 
 		SDL_Texture* load_PNG(string path);
 
-		void Collision();
+		void Collision(int indice);
 		int get_secs();
 		void Run();
 		void Cleanup();
