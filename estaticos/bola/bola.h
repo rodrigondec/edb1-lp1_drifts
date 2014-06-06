@@ -5,6 +5,7 @@ class Bola{
 	private:
 		bool attached;
     	string tipo;
+    	int bola_to_mouse[4];
     	int accel_x;
     	int accel_y;
 
