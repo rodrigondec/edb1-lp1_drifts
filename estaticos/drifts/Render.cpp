@@ -132,5 +132,34 @@ void Drifts::Render(){
 			player.Score.x -= 20;
 		}while(score > 0);	
   	}
+  	//================================================== GAME OVER ============================================================
+  	else if(screen == 3){
+  	//---------------------------------------------- BACKGROUND ----------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
+
+		//---------------------------------------------- GAME OVER ---------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_GAMEOVER], NULL, &gameoverRect);
+		//---------------------------------------------- PLAY AGAIN ---------------------------------------------------------
+		letraRect.x = 200;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_P], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_L], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_A], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_Y], NULL, &letraRect);
+		letraRect.x += 20;
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_A], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_G], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_A], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_I], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_N], NULL, &letraRect);
+		letraRect.x += 20;
+	}
   	SDL_RenderPresent(Renderer);
 }

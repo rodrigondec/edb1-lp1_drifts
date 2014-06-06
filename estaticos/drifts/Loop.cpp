@@ -1,5 +1,15 @@
 void Drifts::Loop(){
 	if(screen == 2){
+		if(player.get_life() == 0){
+			screen = 3;
+			for(unsigned i = 0; i < bolas.size(); i++){
+				bolas.erase(bolas.begin()+i);
+				i--;
+			}
+			player.reset_life();
+			player.reset_score();
+			SDL_ShowCursor(1);
+		}
 		if(get_secs()%clock_spawn == 0 && checker_create_bola){
 			int i = (rand()%7)+3;
 			while(i > 0){ //random 1~3 bolas por tick

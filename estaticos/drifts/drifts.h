@@ -15,7 +15,9 @@ class Drifts{
 		SDL_Event Event;
 
 		SDL_Rect startgameRect;
+		SDL_Rect gameoverRect;
 		SDL_Rect rewindRect;
+		SDL_Rect letraRect;
 
 		Player player;
         vector <Bola> bolas;
