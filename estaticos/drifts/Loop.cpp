@@ -1,5 +1,6 @@
 void Drifts::Loop(){
 	if(screen == 2){
+		// ------------------- IS GAME OVER? -----------------------------------------------
 		if(player.get_life() == 0){
 			screen = 3;
 			for(unsigned i = 0; i < bolas.size(); i++){
@@ -10,6 +11,7 @@ void Drifts::Loop(){
 			player.reset_score();
 			SDL_ShowCursor(1);
 		}
+		// ------------------- IS BOLA SPAWN TIME? -----------------------------------------------
 		if(get_secs()%clock_spawn == 0 && checker_create_bola){
 			int i = (rand()%7)+3;
 			while(i > 0){ //random 1~3 bolas por tick
@@ -23,16 +25,14 @@ void Drifts::Loop(){
 	    else if(get_secs()%clock_spawn != 0){
 	        checker_create_bola = true;
 	    }
-
+	    // ------------------- IS COLLISION? ----------------------------------------------------
 	    for(unsigned i = 0; i < bolas.size(); i++){
             if(player.Rect.x >= bolas[i].Rect.x && player.Rect.x <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
                 player.Rect.y >= bolas[i].Rect.y && player.Rect.y <= (bolas[i].Rect.y + bolas[i].Rect.h)){
                 Collision(i);
             }
-
-
         }
-
+        // ------------------- IS TIME TO MOVE BOLAS? ----------------------------------------------------
 	    if(checker_move_bola == 1){
 	    	for(unsigned i = 0; i < bolas.size(); i++){
 	    		if(!bolas[i].get_status()){
