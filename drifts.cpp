@@ -29,6 +29,7 @@ Drifts::Drifts(){
     clock_spawn = 5;
     get_more_pointers = 0;
     paused = 0;
+    rip = 0;
 
     srand(time(NULL));
 }

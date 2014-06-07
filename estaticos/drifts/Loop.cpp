@@ -16,7 +16,7 @@ void Drifts::Loop(){
 			if(get_more_pointers >= 1 && get_more_pointers <= 2599){
 				get_more_pointers++;
 			} 
-			else if(get_more_pointers == (2600)){
+			else if(get_more_pointers == 2600){
 				get_more_pointers = 0;
 			}
 			// ------------------- IS BOLA SPAWN TIME? -----------------------------------------------
@@ -33,13 +33,25 @@ void Drifts::Loop(){
 		    else if(get_secs()%clock_spawn != 0){
 		        checker_create_bola = true;
 		    }
-		    // ------------------- IS COLLISION? ----------------------------------------------------
-		    for(unsigned i = 0; i < bolas.size(); i++){
-	            if(player.Rect.x >= bolas[i].Rect.x && player.Rect.x <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
-	                player.Rect.y >= bolas[i].Rect.y && player.Rect.y <= (bolas[i].Rect.y + bolas[i].Rect.h)){
-	                Collision(i);
-	            }
-	        }
+		    // ------------------- IS RIP?? ---------------------------------------------------------
+		    if(rip >= 1){
+		    	if(rip >= 1 && rip <= 2599){
+		    		rip++;
+		    	}
+		    	else if(rip == 2600){
+		    		rip = 0;
+		    	}
+		    }
+		    else{
+		    	// ------------------- IS COLLISION? ----------------------------------------------------
+			    for(unsigned i = 0; i < bolas.size(); i++){
+		            if(player.Rect.x >= bolas[i].Rect.x && player.Rect.x <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+		                player.Rect.y >= bolas[i].Rect.y && player.Rect.y <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+		                Collision(i);
+		            }
+		        }
+		    }
+		    
 	        // ------------------- IS TIME TO MOVE BOLAS? ----------------------------------------------------
 		    if(checker_move_bola == 1){
 		    	for(unsigned i = 0; i < bolas.size(); i++){

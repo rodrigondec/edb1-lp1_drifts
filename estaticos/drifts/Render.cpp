@@ -137,7 +137,39 @@ void Drifts::Render(){
 				letraRect.x += 20;
 			}
 		}
-		
+	//---------------------------------------------- RIP?? ---------------------------------------------------------------
+		if(rip >= 1 && rip <= 2599){
+			letraRect.x = (player.Rect.x - 80);
+			letraRect.y = (player.Rect.y - 80);
+			SDL_RenderCopy(Renderer, TextureBank[IMG_G], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_T], NULL, &letraRect);
+			letraRect.x += 20;
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_A], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_D], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_Y], NULL, &letraRect);
+			letraRect.x += 20;
+			letraRect.x = (player.Rect.x - 2);
+			letraRect.y = (player.Rect.y - 40);
+			if(rip >= 1 && rip <= 866){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &letraRect);
+			}
+			else if(rip >= 867 && rip <= 1732){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &letraRect);
+			}
+			else if(rip >= 1733 && rip <= 2599){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &letraRect);
+			}
+		}	
 	//---------------------------------------------- ICON LIFE + LIFE ----------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_USERLIFE], NULL, &player.Icon);
 		if(player.get_life() == 3){

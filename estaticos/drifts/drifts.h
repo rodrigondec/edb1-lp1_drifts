@@ -29,6 +29,7 @@ class Drifts{
 
 		bool checker_create_bola;
 		int paused;
+		int rip;
 		int checker_move_bola;
 		int clock_spawn;
 		int invert_accel;

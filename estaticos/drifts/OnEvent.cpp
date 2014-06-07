@@ -39,6 +39,7 @@ void Drifts::OnEvent(SDL_Event* Event){
                player.Rect.y > letraRect.y && player.Rect.y < (letraRect.h+letraRect.y)){
                 screen = 2;
                 SDL_ShowCursor(0);
+                rip = 0;
             }
             if(player.Rect.x > gameoverRect.x && player.Rect.x < (gameoverRect.x + gameoverRect.w) && 
                player.Rect.y > gameoverRect.y && player.Rect.y < (gameoverRect.y + gameoverRect.h)){
