@@ -24,15 +24,6 @@ Drifts::Drifts(){
     Window = NULL;
     Renderer = NULL;
     Music = NULL;
-
-    checker_create_bola = true;
-    checker_move_bola = 1;
-    clock_spawn = 5;
-    get_more_pointers = 0;
-    paused = 0;
-    rip = 0;
-
-    srand(time(NULL));
 }
 
 Drifts::~Drifts(){}

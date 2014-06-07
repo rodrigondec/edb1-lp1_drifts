@@ -19,6 +19,7 @@ class Drifts{
 		SDL_Rect startgameRect;
 		SDL_Rect gameoverRect;
 		SDL_Rect rewindRect;
+		SDL_Rect soundRect;
 		SDL_Rect pauseplayRect;
 		SDL_Rect letraRect;
 

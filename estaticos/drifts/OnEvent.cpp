@@ -4,7 +4,19 @@ void Drifts::OnEvent(SDL_Event* Event){
     }
     if(screen == 0){
     	if(Event->type == SDL_MOUSEBUTTONDOWN && Event->button.button == SDL_BUTTON_LEFT){
-	        screen = 1;
+            SDL_GetMouseState(&player.Rect.x, &player.Rect.y);
+            if(player.Rect.x > soundRect.x && player.Rect.x < (soundRect.x + soundRect.w) && 
+               player.Rect.y > soundRect.y && player.Rect.y < (soundRect.y + soundRect.h)){
+                if(!Mix_PausedMusic()){
+                    Mix_PauseMusic();
+                }
+                else{
+                    Mix_ResumeMusic();
+                }
+            }
+            else{
+                screen = 1;
+            }
     	}
     }
     else if(screen == 1){
@@ -19,6 +31,15 @@ void Drifts::OnEvent(SDL_Event* Event){
                 screen = 2;
                 SDL_ShowCursor(0);
             }
+            else if(player.Rect.x > soundRect.x && player.Rect.x < (soundRect.x + soundRect.w) && 
+               player.Rect.y > soundRect.y && player.Rect.y < (soundRect.y + soundRect.h)){
+                if(!Mix_PausedMusic()){
+                    Mix_PauseMusic();
+                }
+                else{
+                    Mix_ResumeMusic();
+                }
+            }
         }
     }
     else if(screen == 2){
@@ -29,6 +50,15 @@ void Drifts::OnEvent(SDL_Event* Event){
             if((player.Rect.x + 20) > pauseplayRect.x && (player.Rect.x + 20) < (pauseplayRect.x + pauseplayRect.w) && 
                (player.Rect.y + 20) > pauseplayRect.y && (player.Rect.y + 20) < (pauseplayRect.y + pauseplayRect.h)){
                 paused = !paused;
+            }
+            else if((player.Rect.x + 20) > soundRect.x && (player.Rect.x + 20) < (soundRect.x + soundRect.w) && 
+               (player.Rect.y + 20) > soundRect.y && (player.Rect.y + 20) < (soundRect.y + soundRect.h)){
+                if(!Mix_PausedMusic()){
+                    Mix_PauseMusic();
+                }
+                else{
+                    Mix_ResumeMusic();
+                }
             }
         }
     }
@@ -41,10 +71,19 @@ void Drifts::OnEvent(SDL_Event* Event){
                 SDL_ShowCursor(0);
                 rip = 0;
             }
-            if(player.Rect.x > gameoverRect.x && player.Rect.x < (gameoverRect.x + gameoverRect.w) && 
+            else if(player.Rect.x > gameoverRect.x && player.Rect.x < (gameoverRect.x + gameoverRect.w) && 
                player.Rect.y > gameoverRect.y && player.Rect.y < (gameoverRect.y + gameoverRect.h)){
                 screen = 0;
                 rip = 0;
+            }
+            else if(player.Rect.x > soundRect.x && player.Rect.x < (soundRect.x + soundRect.w) && 
+               player.Rect.y > soundRect.y && player.Rect.y < (soundRect.y + soundRect.h)){
+                if(!Mix_PausedMusic()){
+                    Mix_PauseMusic();
+                }
+                else{
+                    Mix_ResumeMusic();
+                }
             }
         }
     }

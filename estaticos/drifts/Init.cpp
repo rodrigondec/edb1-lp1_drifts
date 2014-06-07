@@ -115,8 +115,17 @@ bool Drifts::Init(){
 //++++++++++++++ END LOADING ++++++++++++++++++++++++++++++++++++++++++//
 
 //++++++++++++++ SETING VAR'S +++++++++++++++++++++++++++++++++++++++++//
+    srand(time(NULL));
+
     Running = true;
     screen = 0;
+
+    checker_create_bola = true;
+    checker_move_bola = 1;
+    clock_spawn = 5;
+    get_more_pointers = 0;
+    paused = 0;
+    rip = 0;
 
     startgameRect.x = 220;
     startgameRect.y = 200;
@@ -140,6 +149,11 @@ bool Drifts::Init(){
     rewindRect.y = 10;
     rewindRect.w = 35;
     rewindRect.h = 35;
+
+    soundRect.x = 60;
+    soundRect.y = 10;
+    soundRect.w = 35;
+    soundRect.h = 35;
 //++++++++++++++ END VAR'S +++++++++++++++++++++++++++++++++++++++++++//
     Mix_PlayMusic(Music, -1);
     system("cls");

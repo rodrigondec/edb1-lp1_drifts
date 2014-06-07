@@ -2,7 +2,55 @@ void Drifts::Render(){
   	SDL_RenderClear(Renderer);
 //================================================== TELA INICIAL =========================================================
   	if(screen == 0){
+  	// ---------------------------------------------- BACKGROUND ----------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_INITIALSCREEN], NULL, NULL);
+	// ---------------------------------------------- SOUND ---------------------------------------------------------------
+		if(!Mix_PausedMusic()){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDON], NULL, &soundRect);
+		}
+		else{
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDOFF], NULL, &soundRect);
+		}
+	// ---------------------------------------------- MUSIC ---------------------------------------------------------------
+		letraRect.x = 200;
+		letraRect.y = 10;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_T], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_H], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+		letraRect.x += 20;
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_P], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_O], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_D], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_I], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_G], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_Y], NULL, &letraRect);
+		letraRect.x += 20;
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_H], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_O], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_T], NULL, &letraRect);
+		letraRect.x += 20;
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_I], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_D], NULL, &letraRect);
+		letraRect.x += 20;
+		SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+
   	}
 //================================================== MENU ================================================================
   	else if(screen == 1){
@@ -10,6 +58,13 @@ void Drifts::Render(){
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
 	//---------------------------------------------- REWIND ICON ---------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_REWIND], NULL, &rewindRect);
+	// ---------------------------------------------- SOUND ---------------------------------------------------------------
+		if(!Mix_PausedMusic()){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDON], NULL, &soundRect);
+		}
+		else{
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDOFF], NULL, &soundRect);
+		}
 	//-------------------------------------------- ICON LIFE + LIFE ------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_USERLIFE], NULL, &player.Icon);
 		if(player.get_life() == 3){
@@ -74,7 +129,13 @@ void Drifts::Render(){
 		else{
 			SDL_RenderCopy(Renderer, TextureBank[IMG_PLAY], NULL, &pauseplayRect);
 		}
-		
+	// ---------------------------------------------- SOUND ---------------------------------------------------------------
+		if(!Mix_PausedMusic()){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDON], NULL, &soundRect);
+		}
+		else{
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDOFF], NULL, &soundRect);
+		}	
 	//---------------------------------------------- BOLAS ---------------------------------------------------------------
 		for(unsigned i = 0; i < bolas.size(); i++){
 			if(bolas[i].get_type() == "pointer"){
@@ -221,11 +282,17 @@ void Drifts::Render(){
 			player.Score.x -= 20;
 		}while(score > 0);	
   	}
-  	//================================================== GAME OVER ============================================================
+//================================================== GAME OVER ============================================================
   	else if(screen == 3){
   	//---------------------------------------------- BACKGROUND ----------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
-
+	// ---------------------------------------------- SOUND ---------------------------------------------------------------
+		if(!Mix_PausedMusic()){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDON], NULL, &soundRect);
+		}
+		else{
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDOFF], NULL, &soundRect);
+		}
 	//---------------------------------------------- GAME OVER ---------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_GAMEOVER], NULL, &gameoverRect);
 	//---------------------------------------------- PLAY AGAIN ---------------------------------------------------------
