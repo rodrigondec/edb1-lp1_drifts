@@ -118,7 +118,7 @@ bool Drifts::Init(){
     srand(time(NULL));
 
     Running = true;
-    screen = 0;
+    screen = CREDITOS;
 
     checker_create_bola = true;
     checker_move_bola = 1;

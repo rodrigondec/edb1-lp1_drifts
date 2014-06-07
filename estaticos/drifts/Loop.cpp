@@ -1,9 +1,9 @@
 void Drifts::Loop(){
-	if(screen == 2){
+	if(screen == GAME){
 		if(!paused){
 			// ------------------- IS GAME OVER? -----------------------------------------------
 			if(player.get_life() == 0){
-				screen = 3;
+				screen = GAMEOVER;
 				for(unsigned i = 0; i < bolas.size(); i++){
 					bolas.erase(bolas.begin()+i);
 					i--;
