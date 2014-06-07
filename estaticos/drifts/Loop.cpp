@@ -46,10 +46,23 @@ void Drifts::Loop(){
 		    	// ------------------- IS COLLISION? ----------------------------------------------------
 			    for(unsigned i = 0; i < bolas.size(); i++){
 			    	if(!bolas[i].get_status()){
-			            if((player.Rect.x + 27) >= bolas[i].Rect.x && (player.Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
-			            	(player.Rect.y + 27) >= bolas[i].Rect.y && (player.Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
-				            	Collision(i);
-			            }
+			    		if(bolas_attached){
+			    			for(unsigned j = 0; j < bolas.size(); j++){
+			    				if(bolas[j].get_status()){
+			    					if((bolas[j].Rect.x + 27) >= bolas[i].Rect.x && (bolas[j].Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+						            	(bolas[j].Rect.y + 27) >= bolas[i].Rect.y && (bolas[j].Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+							            Collision(i);
+						            }
+			    				}
+			    			}
+			    		}
+			    		else{
+			    			if((player.Rect.x + 27) >= bolas[i].Rect.x && (player.Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+				            	(player.Rect.y + 27) >= bolas[i].Rect.y && (player.Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+					            Collision(i);
+				            }
+			    		}
+			            
 			        }
 		        		
 		        }

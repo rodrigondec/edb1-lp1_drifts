@@ -38,6 +38,7 @@ class Drifts{
 		int invert_accel;
 		int get_more_pointers;
 		int counter_pointers;
+		bool bolas_attached;
 
 		SDL_Texture* load_PNG(string path);
 		void load_WAV(string path);

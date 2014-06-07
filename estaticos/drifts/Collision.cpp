@@ -1,9 +1,11 @@
 void Drifts::Collision(int indice){
 	if(bolas[indice].get_type() == "pointer"){
 		bolas[indice].attach((player.Rect.x + 27), (player.Rect.y + 27));
+		bolas_attached = true;
 	}
 	else if(bolas[indice].get_type() == "saver"){
 		bolas.erase(bolas.begin()+indice);
+		bolas_attached = false;
 		counter_pointers = 0;
 		for(unsigned i = 0; i < bolas.size(); i++){
 			if(bolas[i].get_status()){
@@ -44,6 +46,7 @@ void Drifts::Collision(int indice){
 	}
 	else if(bolas[indice].get_type() == "murderer"){
 		bolas.erase(bolas.begin()+indice);
+		bolas_attached = false;
 		for(unsigned i = 0; i < bolas.size(); i++){
 			if(bolas[i].get_status()){
 				bolas.erase(bolas.begin()+i);

@@ -126,6 +126,7 @@ bool Drifts::Init(){
     get_more_pointers = 0;
     paused = 0;
     rip = 0;
+    bolas_attached = false;
 
     startgameRect.x = 220;
     startgameRect.y = 200;
