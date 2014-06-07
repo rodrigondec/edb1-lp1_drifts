@@ -36,6 +36,10 @@ Bola::Bola(){
 	Rect.y = 0;
 	Rect.w = 45;
 	Rect.h = 45;
+
+	Rect.x = 300;
+	Rect.y = 300;
+	tipo = "pointer";
 }
 
 Bola::~Bola(){}
@@ -54,8 +58,8 @@ void Bola::attach(int mouse_x, int mouse_y){
 }
 
 void Bola::seguir_mouse(int mouse_x, int mouse_y){
-	Rect.x = bola_to_mouse[0]+(mouse_x - bola_to_mouse[2]);
-	Rect.y = bola_to_mouse[1]+(mouse_y - bola_to_mouse[3]);
+	Rect.x = bola_to_mouse[0] + (mouse_x - bola_to_mouse[2]);
+	Rect.y = bola_to_mouse[1] + (mouse_y - bola_to_mouse[3]);
 }
 
 void Bola::invert_accel_x(){

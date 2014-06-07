@@ -47,12 +47,12 @@ void Drifts::OnEvent(SDL_Event* Event){
         	SDL_GetMouseState(&player.Rect.x, &player.Rect.y);
     	}
         if(Event->type == SDL_MOUSEBUTTONDOWN && Event->button.button == SDL_BUTTON_LEFT){
-            if((player.Rect.x + 20) > pauseplayRect.x && (player.Rect.x + 20) < (pauseplayRect.x + pauseplayRect.w) && 
-               (player.Rect.y + 20) > pauseplayRect.y && (player.Rect.y + 20) < (pauseplayRect.y + pauseplayRect.h)){
+            if((player.Rect.x + 27) > pauseplayRect.x && (player.Rect.x + 21) < (pauseplayRect.x + pauseplayRect.w) && 
+               (player.Rect.y + 27) > pauseplayRect.y && (player.Rect.y + 21) < (pauseplayRect.y + pauseplayRect.h)){
                 paused = !paused;
             }
-            else if((player.Rect.x + 20) > soundRect.x && (player.Rect.x + 20) < (soundRect.x + soundRect.w) && 
-               (player.Rect.y + 20) > soundRect.y && (player.Rect.y + 20) < (soundRect.y + soundRect.h)){
+            else if((player.Rect.x + 27) > soundRect.x && (player.Rect.x + 21) < (soundRect.x + soundRect.w) && 
+               (player.Rect.y + 27) > soundRect.y && (player.Rect.y + 21) < (soundRect.y + soundRect.h)){
                 if(!Mix_PausedMusic()){
                     Mix_PauseMusic();
                 }

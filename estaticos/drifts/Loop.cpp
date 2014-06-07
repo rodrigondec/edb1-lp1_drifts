@@ -2,7 +2,7 @@ void Drifts::Loop(){
 	if(screen == GAME){
 		if(!paused){
 			// ------------------- IS GAME OVER? -----------------------------------------------
-			if(player.get_life() == 0){
+			/*if(player.get_life() == 0){
 				screen = GAMEOVER;
 				for(unsigned i = 0; i < bolas.size(); i++){
 					bolas.erase(bolas.begin()+i);
@@ -42,18 +42,26 @@ void Drifts::Loop(){
 		    		rip = 0;
 		    	}
 		    }
-		    else{
+		    else{*/
 		    	// ------------------- IS COLLISION? ----------------------------------------------------
 			    for(unsigned i = 0; i < bolas.size(); i++){
-		            if(player.Rect.x >= bolas[i].Rect.x && player.Rect.x <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
-		                player.Rect.y >= bolas[i].Rect.y && player.Rect.y <= (bolas[i].Rect.y + bolas[i].Rect.h)){
-		                Collision(i);
-		            }
+			    	if(!bolas[i].get_status()){
+			            if((player.Rect.x + 27) >= bolas[i].Rect.x && (player.Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+			            	(player.Rect.y + 27) >= bolas[i].Rect.y && (player.Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+				            	Collision(i);
+			            }
+			        }
+		        		
 		        }
-		    }
-		    
+		    /*}*/
+		    for(unsigned i = 0; i < bolas.size(); i++){
+	        	if(bolas[i].get_status()){
+	        		bolas[i].seguir_mouse((player.Rect.x + 27), (player.Rect.y + 27));
+	        	}
+	        }
 	        // ------------------- IS TIME TO MOVE BOLAS? ----------------------------------------------------
-		    if(checker_move_bola == 1){
+	        
+		    /*if(checker_move_bola == 1){
 		    	for(unsigned i = 0; i < bolas.size(); i++){
 		    		if(!bolas[i].get_status()){
 		    			bolas[i].mover();
@@ -83,9 +91,6 @@ void Drifts::Loop(){
 							bolas[i].parada();
 						}
 		    		}
-		    		else{
-		    			bolas[i].seguir_mouse(player.Rect.x, player.Rect.y);
-		    		}
 				}
 				checker_move_bola = 2;
 		    }
@@ -94,7 +99,7 @@ void Drifts::Loop(){
 		    }
 		    else if(checker_move_bola == 25){
 		    	checker_move_bola = 1;
-		    }
+		    }*/
 		}
 	}
 }

@@ -1,6 +1,6 @@
 void Drifts::Collision(int indice){
 	if(bolas[indice].get_type() == "pointer"){
-		bolas[indice].attach(player.Rect.x, player.Rect.y);
+		bolas[indice].attach((player.Rect.x + 27), (player.Rect.y + 27));
 	}
 	else if(bolas[indice].get_type() == "saver"){
 		bolas.erase(bolas.begin()+indice);
