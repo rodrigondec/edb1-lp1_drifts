@@ -14,6 +14,8 @@ class Drifts{
 		SDL_Renderer* Renderer;
 		SDL_Event Event;
 
+		Mix_Music *Music;
+
 		SDL_Rect startgameRect;
 		SDL_Rect gameoverRect;
 		SDL_Rect rewindRect;
@@ -37,6 +39,7 @@ class Drifts{
 		int counter_pointers;
 
 		SDL_Texture* load_PNG(string path);
+		void load_WAV(string path);
 
 		void Collision(int indice);
 		int get_secs();

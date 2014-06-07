@@ -23,6 +23,7 @@ Drifts::Drifts(){
 
     Window = NULL;
     Renderer = NULL;
+    Music = NULL;
 
     checker_create_bola = true;
     checker_move_bola = 1;

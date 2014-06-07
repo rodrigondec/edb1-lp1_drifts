@@ -6,7 +6,9 @@
 
 #include "drifts/drifts.h"
 
-#include "texture/load_PNG.cpp"
+#include "media/load_PNG.cpp"
+#include "media/load_WAV.cpp"
+
 #include "drifts/GetSecs.cpp"
 #include "drifts/Collision.cpp"
 #include "drifts/Run.cpp"

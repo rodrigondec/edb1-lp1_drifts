@@ -1,6 +1,6 @@
 bool Drifts::Init(){
 //+++++++++++++++++ INITIALIZING VIDEO ++++++++++++++++++++++++++++++++++++//
-	if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+	if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0) {
         cout<<"Unable to Init SDL: "<<SDL_GetError();
         return false;
     }
@@ -19,7 +19,7 @@ bool Drifts::Init(){
         return false;
     }
 //+++++++++++++++++ END WINDOW +++++++++++++++++++++++++++++++++++++++++++//
-//differ
+
 //+++++++++++++++++ RENDERING WINDOW +++++++++++++++++++++++++++++++++++++//
     if((Renderer = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED)) == NULL) {
         cout<<"Unable to create renderer";
@@ -36,6 +36,13 @@ bool Drifts::Init(){
     }
 //+++++++++++++++++ END PNG LIB +++++++++++++++++++++++++++++++++++++++++//
 
+//+++++++++++++++++ INITIALIZING MIXER ++++++++++++++++++++++++++++++++//
+    if(Mix_OpenAudio( 44100, MIX_DEFAULT_FORMAT, 2, 2048 ) < 0){
+        cout<<"SDL_mixer could not initialize! SDL_mixer Error: "<<Mix_GetError()<<endl;
+        return false;
+    }
+//+++++++++++++++++ END MIXER ++++++++++++++++++++++++++++++++//
+
 //+++++++++++++++++ SETANDO ICONE DO APP ++++++++++++++++++++++++++++++++//    
     SDL_Surface* loadsurf = IMG_Load("images/balls/player.png");
     
@@ -43,6 +50,10 @@ bool Drifts::Init(){
 
     SDL_FreeSurface(loadsurf);
 //++++++++++++++ END ICONE APP +++++++++++++++++++++++++++++++++++++++++//
+
+//++++++++++++++ LOADING MUSIC +++++++++++++++++++++++++++++++++++++++++//
+    load_WAV("sounds/The Prodigy - Hot Ride.wav");
+//++++++++++++++ END LOADING +++++++++++++++++++++++++++++++++++++++++++++//
 
 //++++++++++++++ LOADING IMG'S +++++++++++++++++++++++++++++++++++++++++//
     TextureBank[IMG_INITIALSCREEN] = load_PNG("images/background/initialscreen.png");
@@ -130,6 +141,7 @@ bool Drifts::Init(){
     rewindRect.w = 35;
     rewindRect.h = 35;
 //++++++++++++++ END VAR'S +++++++++++++++++++++++++++++++++++++++++++//
+    Mix_PlayMusic(Music, -1);
     system("cls");
     system("clear");
 
