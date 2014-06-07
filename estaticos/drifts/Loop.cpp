@@ -2,7 +2,7 @@ void Drifts::Loop(){
 	if(screen == GAME){
 		if(!paused){
 			// ------------------- IS GAME OVER? -----------------------------------------------
-			/*if(player.get_life() == 0){
+			if(player.get_life() == 0){
 				screen = GAMEOVER;
 				for(unsigned i = 0; i < bolas.size(); i++){
 					bolas.erase(bolas.begin()+i);
@@ -42,7 +42,7 @@ void Drifts::Loop(){
 		    		rip = 0;
 		    	}
 		    }
-		    else{*/
+		    else{
 		    	// ------------------- IS COLLISION? ----------------------------------------------------
 			    for(unsigned i = 0; i < bolas.size(); i++){
 			    	if(!bolas[i].get_status()){
@@ -53,7 +53,7 @@ void Drifts::Loop(){
 			        }
 		        		
 		        }
-		    /*}*/
+		    }
 		    for(unsigned i = 0; i < bolas.size(); i++){
 	        	if(bolas[i].get_status()){
 	        		bolas[i].seguir_mouse((player.Rect.x + 27), (player.Rect.y + 27));
@@ -61,7 +61,7 @@ void Drifts::Loop(){
 	        }
 	        // ------------------- IS TIME TO MOVE BOLAS? ----------------------------------------------------
 	        
-		    /*if(checker_move_bola == 1){
+		    if(checker_move_bola == 1){
 		    	for(unsigned i = 0; i < bolas.size(); i++){
 		    		if(!bolas[i].get_status()){
 		    			bolas[i].mover();
@@ -99,7 +99,7 @@ void Drifts::Loop(){
 		    }
 		    else if(checker_move_bola == 25){
 		    	checker_move_bola = 1;
-		    }*/
+		    }
 		}
 	}
 }

@@ -36,10 +36,6 @@ Bola::Bola(){
 	Rect.y = 0;
 	Rect.w = 45;
 	Rect.h = 45;
-
-	Rect.x = 300;
-	Rect.y = 300;
-	tipo = "pointer";
 }
 
 Bola::~Bola(){}

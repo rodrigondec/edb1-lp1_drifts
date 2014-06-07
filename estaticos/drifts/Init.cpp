@@ -158,6 +158,6 @@ bool Drifts::Init(){
     Mix_PlayMusic(Music, -1);
     system("cls");
     system("clear");
-Create_Bola();
+
     return true;
 }
