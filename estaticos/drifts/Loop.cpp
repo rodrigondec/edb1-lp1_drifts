@@ -2,11 +2,13 @@ void Drifts::Loop(){
 	if(screen == INSTRUCOES){
 		checker_move_bola = 1;
 		instrucao = 1;
+        bolas_attached = false;
+        for(unsigned i = 0; i < bolas.size(); i++){
+            bolas.erase(bolas.begin()+i);
+            i--;
+        }
 		player.reset_life();
 		player.reset_score();
-		for(unsigned i = 0; i < bolas.size(); i++){
-			bolas.erase(bolas.begin()+i);
-		}
 	}
 	else if(screen == INSTRUCAO1){
 		if(instrucao == 1){
@@ -47,12 +49,18 @@ void Drifts::Loop(){
 				player.Rect.x++;
 			}
 			for(unsigned i = 0; i < bolas.size(); i++){
-	        	bolas[i].seguir_mouse((player.Rect.x), (player.Rect.y));
+				if(bolas[i].get_status()){
+					bolas[i].seguir_mouse((player.Rect.x), (player.Rect.y));
+				}
 	        }
 			instrucao++;
 		}
 		else if(instrucao == 5000){
-			screen = INSTRUCOES;
+			instrucao = 1;
+			for(unsigned i = 0; i < bolas.size(); i++){
+				bolas.erase(bolas.begin()+i);
+				i--;
+			}
 		}
 	}
 	else if(screen == INSTRUCAO2){
@@ -96,10 +104,13 @@ void Drifts::Loop(){
 			instrucao++;
 		}
 		else if(instrucao == 3300){
-			screen = INSTRUCOES;
+			instrucao = 1;
 		}
 	}
 	else if(screen == INSTRUCAO3){
+		if(player.get_life() == 0){
+			instrucao = 3300;
+		}
 		if(instrucao == 1){
 			player.Rect.x = 277;
 			player.Rect.y = 230;
@@ -145,7 +156,7 @@ void Drifts::Loop(){
 			instrucao++;
 		}
 		else if(instrucao == 3300){
-			screen = INSTRUCOES;
+			instrucao = 1;
 		}
 	}
 	else if(screen == GAME){
@@ -196,21 +207,22 @@ void Drifts::Loop(){
 			    for(unsigned i = 0; i < bolas.size(); i++){
 			    	if(!bolas[i].get_status()){
 			    		if(bolas_attached){
-			    			for(unsigned j = 0; j < bolas.size(); j++){
-			    				if(bolas[j].get_status()){
-			    					if((bolas[j].Rect.x + 27) >= bolas[i].Rect.x && (bolas[j].Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
-						            	(bolas[j].Rect.y + 27) >= bolas[i].Rect.y && (bolas[j].Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
-							            Collision(i);
-						            }
-			    				}
-			    			}
-			    		}
-			    		else{
-			    			if((player.Rect.x + 27) >= bolas[i].Rect.x && (player.Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
-				            	(player.Rect.y + 27) >= bolas[i].Rect.y && (player.Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
-					            Collision(i);
-				            }
-			    		}
+ 			    			for(unsigned j = 0; j < bolas.size(); j++){
+ 			    				if(bolas[j].get_status()){
+ 			    					if((bolas[j].Rect.x + 27) >= bolas[i].Rect.x && (bolas[j].Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+ 						            	(bolas[j].Rect.y + 27) >= bolas[i].Rect.y && (bolas[j].Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+ 							            Collision(i);
+ 						            }
+ 			    				}
+ 			    			}
+ 			    		}
+ 			    		else{
+ 			    			if((player.Rect.x + 27) >= bolas[i].Rect.x && (player.Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+ 				            	(player.Rect.y + 27) >= bolas[i].Rect.y && (player.Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+ 					            Collision(i);
+ 				            }
+ 			    		}
+ 
 			        }
 		        		
 		        }
