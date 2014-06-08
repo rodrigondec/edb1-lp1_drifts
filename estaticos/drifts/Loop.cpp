@@ -216,15 +216,11 @@ void Drifts::Loop(){
  			    				}
  			    			}
  			    		}
- 			    		else{
- 			    			if((player.Rect.x + 27) >= bolas[i].Rect.x && (player.Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
- 				            	(player.Rect.y + 27) >= bolas[i].Rect.y && (player.Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
- 					            Collision(i);
- 				            }
- 			    		}
- 
+ 			    		if((player.Rect.x + 27) >= bolas[i].Rect.x && (player.Rect.x + 21) <= (bolas[i].Rect.x + bolas[i].Rect.w) &&
+			            	(player.Rect.y + 27) >= bolas[i].Rect.y && (player.Rect.y + 21) <= (bolas[i].Rect.y + bolas[i].Rect.h)){
+				            Collision(i);
+			            }
 			        }
-		        		
 		        }
 		    }
 		// ------------------- SEGUIR MOUSE ---------------------------------------------------
