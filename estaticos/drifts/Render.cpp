@@ -211,26 +211,25 @@ void Drifts::Render(){
 	//---------------------------------------------- MOUSE ---------------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
 	//---------------------------------------------- RIP?? ---------------------------------------------------------------
-		if(rip >= 1 && rip <= 2599){
+		if(player.get_life() == 0){
 			letraRect.x = (player.Rect.x - 80);
 			letraRect.y = (player.Rect.y - 80);
 			SDL_RenderCopy(Renderer, TextureBank[IMG_G], NULL, &letraRect);
 			letraRect.x += 20;
-			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
-			letraRect.x += 20;
-			SDL_RenderCopy(Renderer, TextureBank[IMG_T], NULL, &letraRect);
-			letraRect.x += 20;
-			letraRect.x += 20;
-			SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
-			letraRect.x += 20;
-			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
-			letraRect.x += 20;
 			SDL_RenderCopy(Renderer, TextureBank[IMG_A], NULL, &letraRect);
 			letraRect.x += 20;
-			SDL_RenderCopy(Renderer, TextureBank[IMG_D], NULL, &letraRect);
+			SDL_RenderCopy(Renderer, TextureBank[IMG_M], NULL, &letraRect);
+			letraRect. x+= 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect. x+= 20;
 			letraRect.x += 20;
-			SDL_RenderCopy(Renderer, TextureBank[IMG_Y], NULL, &letraRect);
+			SDL_RenderCopy(Renderer, TextureBank[IMG_O], NULL, &letraRect);
 			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_V], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
 			letraRect.x = (player.Rect.x - 2);
 			letraRect.y = (player.Rect.y - 40);
 			if(rip >= 1 && rip <= 866){
@@ -253,6 +252,9 @@ void Drifts::Render(){
 		}
 		else if(player.get_life() == 1){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &player.Life);
+		}
+		else if(player.get_life() == 0){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_0], NULL, &player.Life);
 		}
   	//---------------------------------------------- SCORE --------------------------------------------------------------
 		int temp_score;
