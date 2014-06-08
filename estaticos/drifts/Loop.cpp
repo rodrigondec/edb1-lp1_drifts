@@ -211,7 +211,6 @@ void Drifts::Loop(){
 					            Collision(i);
 				            }
 			    		}
-			            
 			        }
 		        		
 		        }
