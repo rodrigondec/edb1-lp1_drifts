@@ -105,6 +105,7 @@ bool Drifts::Init(){
     TextureBank[IMG_Z] = load_PNG("images/letras/Z.png");
 
     TextureBank[IMG_REWIND] = load_PNG("images/icons/rewind.png");
+    TextureBank[IMG_FORWARD] = load_PNG("images/icons/forward.png");
     TextureBank[IMG_USERLIFE] = load_PNG("images/icons/user_life.png");
     TextureBank[IMG_PLAY] = load_PNG("images/icons/play.png");
     TextureBank[IMG_PAUSE] = load_PNG("images/icons/pause.png");

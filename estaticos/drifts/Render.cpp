@@ -59,7 +59,7 @@ void Drifts::Render(){
 	//---------------------------------------------- REWIND ICON ---------------------------------------------------------
 		SDL_RenderCopy(Renderer, TextureBank[IMG_REWIND], NULL, &rewindRect);
 	//---------------------------------------------- REWIND ICON ---------------------------------------------------------
-		SDL_RenderCopy(Renderer, TextureBank[IMG_REWIND], NULL, &forwardRect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_FORWARD], NULL, &forwardRect);
 	// ---------------------------------------------- SOUND ---------------------------------------------------------------
 		if(!Mix_PausedMusic()){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDON], NULL, &soundRect);
