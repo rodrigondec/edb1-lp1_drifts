@@ -62,6 +62,10 @@ bool Drifts::Init(){
     TextureBank[IMG_STARTGAME] = load_PNG("images/menu/startgame.png");
     TextureBank[IMG_GAMEOVER] = load_PNG("images/menu/gameover.png");
 
+    TextureBank[IMG_INSTRUCAO1] = load_PNG("images/instrucao/instrucao1.png");
+    TextureBank[IMG_INSTRUCAO2] = load_PNG("images/instrucao/instrucao2.png");
+    TextureBank[IMG_INSTRUCAO3] = load_PNG("images/instrucao/instrucao3.png");
+
     TextureBank[IMG_0] = load_PNG("images/numeros/0.png");
     TextureBank[IMG_1] = load_PNG("images/numeros/1.png");
     TextureBank[IMG_2] = load_PNG("images/numeros/2.png");
@@ -126,6 +130,7 @@ bool Drifts::Init(){
     get_more_pointers = 0;
     paused = 0;
     rip = 0;
+    instrucao = 1;
     bolas_attached = false;
 
     startgameRect.x = 220;
@@ -151,10 +156,30 @@ bool Drifts::Init(){
     rewindRect.w = 35;
     rewindRect.h = 35;
 
+    forwardRect.x = 10;
+    forwardRect.y = 55;
+    forwardRect.w = 35;
+    forwardRect.h = 35;
+
     soundRect.x = 60;
     soundRect.y = 10;
     soundRect.w = 35;
     soundRect.h = 35;
+
+    instrucao1Rect.x = 0;
+    instrucao1Rect.y = 120;
+    instrucao1Rect.w = 200;
+    instrucao1Rect.h = 200;
+
+    instrucao2Rect.x = 220;
+    instrucao2Rect.y = 120;
+    instrucao2Rect.w = 200;
+    instrucao2Rect.h = 200;
+
+    instrucao3Rect.x = 440;
+    instrucao3Rect.y = 120;
+    instrucao3Rect.w = 200;
+    instrucao3Rect.h = 200;
 //++++++++++++++ END VAR'S +++++++++++++++++++++++++++++++++++++++++++//
     Mix_PlayMusic(Music, -1);
     system("cls");

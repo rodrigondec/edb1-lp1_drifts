@@ -1,7 +1,156 @@
 void Drifts::Loop(){
-	if(screen == GAME){
+	if(screen == INSTRUCOES){
+		checker_move_bola = 1;
+		instrucao = 1;
+		player.reset_life();
+		player.reset_score();
+		for(unsigned i = 0; i < bolas.size(); i++){
+			bolas.erase(bolas.begin()+i);
+		}
+	}
+	else if(screen == INSTRUCAO1){
+		if(instrucao == 1){
+			player.Rect.x = 295;
+			player.Rect.y = 190;
+			Create_Bola();bolas[0].set_type("pointer");bolas[0].Rect.x = player.Rect.x + 63;bolas[0].Rect.y = player.Rect.y + (-137);
+			Create_Bola();bolas[1].set_type("pointer");bolas[1].Rect.x = player.Rect.x + 45;bolas[1].Rect.y = player.Rect.y + (-120);
+			Create_Bola();bolas[2].set_type("pointer");bolas[2].Rect.x = player.Rect.x + 25;bolas[2].Rect.y = player.Rect.y + (-137);
+			instrucao++;
+		}
+		else if(instrucao <= 2350){
+			if(instrucao == 2350){
+				player.Rect.x -= 1;
+				player.Rect.y -= 3;
+				player.Rect.x -= 27;
+				player.Rect.y -= 27;
+				for(unsigned i = 0; i < bolas.size(); i++){
+					Collision(i);
+				}
+				player.Rect.x += 27;
+				player.Rect.y += 27;
+			}
+			if(instrucao%25 == 0){
+				player.Rect.x++;
+				player.Rect.y--;
+			}
+			if(instrucao%50 == 0){
+				player.Rect.x--;
+			}
+			instrucao++;
+		}
+		else if(instrucao > 2350 && instrucao<= 4999){
+			if(instrucao%25 == 0){
+				player.Rect.x--;
+				player.Rect.y++;
+			}
+			if(instrucao%50 == 0){
+				player.Rect.x++;
+			}
+			for(unsigned i = 0; i < bolas.size(); i++){
+	        	bolas[i].seguir_mouse((player.Rect.x), (player.Rect.y));
+	        }
+			instrucao++;
+		}
+		else if(instrucao == 5000){
+			screen = INSTRUCOES;
+		}
+	}
+	else if(screen == INSTRUCAO2){
+		if(instrucao == 1){
+			player.Rect.x = 277;
+			player.Rect.y = 230;
+			Create_Bola();bolas[0].set_type("pointer");bolas[0].Rect.x = player.Rect.x + 18;bolas[0].Rect.y = player.Rect.y + (-40);
+			Create_Bola();bolas[1].set_type("pointer");bolas[1].Rect.x = player.Rect.x + 0;bolas[1].Rect.y = player.Rect.y + (-23);
+			Create_Bola();bolas[2].set_type("pointer");bolas[2].Rect.x = player.Rect.x + (-20);bolas[2].Rect.y = player.Rect.y + (-40);
+			Create_Bola();bolas[3].set_type("saver");bolas[3].Rect.x = player.Rect.x + 45 + (290 - 277);bolas[3].Rect.y = player.Rect.y + (-120) + (190-230);
+			player.Rect.x -= 27;
+			player.Rect.y -= 27;
+			Collision(0);Collision(1);Collision(2);
+			player.Rect.x += 27;
+			player.Rect.y += 27;
+			instrucao++;
+		}
+		else if(instrucao <= 2350){
+			if(instrucao == 2350){
+				player.Rect.x -= 1;
+				player.Rect.y -= 3;
+			}
+			if(instrucao%25 == 0){
+				player.Rect.x++;
+				player.Rect.y--;
+			}
+			if(instrucao%50 == 0){
+				player.Rect.x--;
+			}
+			for(unsigned i = 0; i < bolas.size(); i++){
+				if(bolas[i].get_status()){
+					bolas[i].seguir_mouse((player.Rect.x), (player.Rect.y));
+				}
+	        }
+			instrucao++;
+		}
+		else if(instrucao > 2350 && instrucao<= 3299){
+			if(instrucao == 2351){
+				Collision(3);
+			}
+			instrucao++;
+		}
+		else if(instrucao == 3300){
+			screen = INSTRUCOES;
+		}
+	}
+	else if(screen == INSTRUCAO3){
+		if(instrucao == 1){
+			player.Rect.x = 277;
+			player.Rect.y = 230;
+			Create_Bola();bolas[0].set_type("pointer");bolas[0].Rect.x = player.Rect.x + 18;bolas[0].Rect.y = player.Rect.y + (-40);
+			Create_Bola();bolas[1].set_type("pointer");bolas[1].Rect.x = player.Rect.x + 0;bolas[1].Rect.y = player.Rect.y + (-23);
+			Create_Bola();bolas[2].set_type("pointer");bolas[2].Rect.x = player.Rect.x + (-20);bolas[2].Rect.y = player.Rect.y + (-40);
+			Create_Bola();bolas[3].set_type("murderer");bolas[3].Rect.x = player.Rect.x + 45 + (290 - 277);bolas[3].Rect.y = player.Rect.y + (-120) + (190-230);
+			player.Rect.x -= 27;
+			player.Rect.y -= 27;
+			Collision(0);Collision(1);Collision(2);
+			player.Rect.x += 27;
+			player.Rect.y += 27;
+			instrucao++;
+		}
+		else if(instrucao <= 2350){
+			if(instrucao == 2350){
+				player.Rect.x -= 1;
+				player.Rect.y -= 3;
+			}
+			if(instrucao%25 == 0){
+				player.Rect.x++;
+				player.Rect.y--;
+			}
+			if(instrucao%50 == 0){
+				player.Rect.x--;
+			}
+			for(unsigned i = 0; i < bolas.size(); i++){
+				if(bolas[i].get_status()){
+					bolas[i].seguir_mouse((player.Rect.x), (player.Rect.y));
+				}
+	        }
+			instrucao++;
+		}
+		else if(instrucao > 2350 && instrucao<= 3299){
+			if(instrucao == 2351){
+				for(unsigned i = 0; i < 4; i++){
+					bolas.erase(bolas.begin()+i);
+		        }
+		        player.death();
+				player.Rect.x = 295;
+				player.Rect.y = 190;
+			}
+			instrucao++;
+		}
+		else if(instrucao == 3300){
+			screen = INSTRUCOES;
+		}
+	}
+	else if(screen == GAME){
 		if(!paused){
-			// ------------------- IS GAME OVER? -----------------------------------------------
+		// ------------------- IS GAME OVER? -----------------------------------------------
 			if(player.get_life() == 0){
 				screen = GAMEOVER;
 				for(unsigned i = 0; i < bolas.size(); i++){
@@ -12,14 +161,14 @@ void Drifts::Loop(){
 				player.reset_score();
 				SDL_ShowCursor(1);
 			}
-			// ------------------- IS NOT ENOUGH POINTERS? -----------------------------------------
+		// ------------------- IS NOT ENOUGH POINTERS? -----------------------------------------
 			if(get_more_pointers >= 1 && get_more_pointers <= 2599){
 				get_more_pointers++;
 			} 
 			else if(get_more_pointers == 2600){
 				get_more_pointers = 0;
 			}
-			// ------------------- IS BOLA SPAWN TIME? -----------------------------------------------
+		// ------------------- IS BOLA SPAWN TIME? -----------------------------------------------
 			if(get_secs()%clock_spawn == 0 && checker_create_bola){
 				int i = (rand()%7)+3;
 				while(i > 0){ //random 1~3 bolas por tick
@@ -33,7 +182,7 @@ void Drifts::Loop(){
 		    else if(get_secs()%clock_spawn != 0){
 		        checker_create_bola = true;
 		    }
-		    // ------------------- IS RIP?? ---------------------------------------------------------
+		// ------------------- IS RIP?? ---------------------------------------------------------
 		    if(rip >= 1){
 		    	if(rip >= 1 && rip <= 2599){
 		    		rip++;
@@ -43,7 +192,7 @@ void Drifts::Loop(){
 		    	}
 		    }
 		    else{
-		    	// ------------------- IS COLLISION? ----------------------------------------------------
+		// ------------------- IS COLLISION? ----------------------------------------------------
 			    for(unsigned i = 0; i < bolas.size(); i++){
 			    	if(!bolas[i].get_status()){
 			    		if(bolas_attached){
@@ -67,13 +216,13 @@ void Drifts::Loop(){
 		        		
 		        }
 		    }
+		// ------------------- SEGUIR MOUSE ---------------------------------------------------
 		    for(unsigned i = 0; i < bolas.size(); i++){
 	        	if(bolas[i].get_status()){
 	        		bolas[i].seguir_mouse((player.Rect.x + 27), (player.Rect.y + 27));
 	        	}
 	        }
-	        // ------------------- IS TIME TO MOVE BOLAS? ----------------------------------------------------
-	        
+	    // ------------------- IS TIME TO MOVE BOLAS? ---------------------------------------------------- 
 		    if(checker_move_bola == 1){
 		    	for(unsigned i = 0; i < bolas.size(); i++){
 		    		if(!bolas[i].get_status()){

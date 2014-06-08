@@ -17,6 +17,7 @@ class Bola{
 
 		void mover();
 		void attach(int mouse_x, int mouse_y);
+		void set_type(string type);
 		void seguir_mouse(int mouse_x, int mouse_y);
 		void invert_accel_x();
 		void invert_accel_y();

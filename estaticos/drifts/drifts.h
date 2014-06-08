@@ -19,9 +19,13 @@ class Drifts{
 		SDL_Rect startgameRect;
 		SDL_Rect gameoverRect;
 		SDL_Rect rewindRect;
+		SDL_Rect forwardRect;
 		SDL_Rect soundRect;
 		SDL_Rect pauseplayRect;
 		SDL_Rect letraRect;
+		SDL_Rect instrucao1Rect;
+		SDL_Rect instrucao2Rect;
+		SDL_Rect instrucao3Rect;
 
 		Player player;
         vector <Bola> bolas;
@@ -38,6 +42,7 @@ class Drifts{
 		int invert_accel;
 		int get_more_pointers;
 		int counter_pointers;
+		int instrucao;
 		bool bolas_attached;
 
 		SDL_Texture* load_PNG(string path);

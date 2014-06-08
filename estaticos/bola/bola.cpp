@@ -45,6 +45,10 @@ void Bola::mover(){
 	Rect.y += accel_y;
 }
 
+void Bola::set_type(string type){
+	tipo = type;
+}
+
 void Bola::attach(int mouse_x, int mouse_y){
 	bola_to_mouse[0] = Rect.x;
 	bola_to_mouse[1] = Rect.y;

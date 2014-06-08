@@ -52,6 +52,248 @@ void Drifts::Render(){
 		SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
 
   	}
+//================================================== INSTRUCOES =========================================================
+  	if(screen == INSTRUCOES){
+  	//---------------------------------------------- BACKGROUND ---------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
+	//---------------------------------------------- REWIND ICON ---------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_REWIND], NULL, &rewindRect);
+	//---------------------------------------------- REWIND ICON ---------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_REWIND], NULL, &forwardRect);
+	// ---------------------------------------------- SOUND ---------------------------------------------------------------
+		if(!Mix_PausedMusic()){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDON], NULL, &soundRect);
+		}
+		else{
+			SDL_RenderCopy(Renderer, TextureBank[IMG_SOUNDOFF], NULL, &soundRect);
+		}
+		SDL_RenderCopy(Renderer, TextureBank[IMG_INSTRUCAO1], NULL, &instrucao1Rect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_INSTRUCAO2], NULL, &instrucao2Rect);
+		SDL_RenderCopy(Renderer, TextureBank[IMG_INSTRUCAO3], NULL, &instrucao3Rect);
+	// ---------------------------------------------- TEXTOS --------------------------------------------------------------
+		for(int i = 0; i < 3; i++){
+			if(i == 0){
+				letraRect.x = (instrucao1Rect.x - 10);
+				letraRect.y = (instrucao1Rect.y - 50 + 270);
+			}
+			else if(i == 1){
+				letraRect.x = (instrucao2Rect.x - 10);
+				letraRect.y = (instrucao2Rect.y - 50);
+			}
+			else if(i == 2){
+				letraRect.x = (instrucao3Rect.x - 30);
+				letraRect.y = (instrucao3Rect.y - 50 + 270);
+			}
+			SDL_RenderCopy(Renderer, TextureBank[IMG_I], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_N], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_S], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_T], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_U], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_C], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_A], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_O], NULL, &letraRect);
+			letraRect.x += 30;
+			if(i == 0){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &letraRect);
+			}
+			else if(i == 1){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &letraRect);
+			}
+			else if(i == 2){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &letraRect);
+			}
+		}
+		
+		
+  	}
+//================================================== INSTRUCAO1 =========================================================
+  	else if(screen == INSTRUCAO1){
+  	//---------------------------------------------- BACKGROUND ---------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
+	//---------------------------------------------- BOLAS ---------------------------------------------------------------
+		for(unsigned i = 0; i < bolas.size(); i++){
+			if(bolas[i].get_type() == "pointer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[i].Rect);
+			}
+			else if(bolas[i].get_type() == "murderer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[i].Rect);
+			}
+			else if(bolas[i].get_type() == "saver"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[i].Rect);
+			}
+		}
+	//---------------------------------------------- MOUSE ---------------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
+  	}
+//================================================== INSTRUCAO2 =========================================================
+  	else if(screen == INSTRUCAO2){
+  	//---------------------------------------------- BACKGROUND ---------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
+	//---------------------------------------------- BOLAS ---------------------------------------------------------------
+		for(unsigned i = 0; i < bolas.size(); i++){
+			if(bolas[i].get_type() == "pointer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[i].Rect);
+			}
+			else if(bolas[i].get_type() == "murderer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[i].Rect);
+			}
+			else if(bolas[i].get_type() == "saver"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[i].Rect);
+			}
+		}
+	//---------------------------------------------- MOUSE ---------------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
+  	//---------------------------------------------- SCORE --------------------------------------------------------------
+		int temp_score;
+		int score = player.get_score();
+		player.reset_x_rscore();
+		do{
+			temp_score = score%10;
+			score /= 10;
+			if(temp_score == 0){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_0], NULL, &player.Score);
+			}
+			else if(temp_score == 1){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &player.Score);
+			}
+			else if(temp_score == 2){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &player.Score);
+			}
+			else if(temp_score == 3){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &player.Score);
+			}
+			else if(temp_score == 4){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_4], NULL, &player.Score);
+			}
+			else if(temp_score == 5){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_5], NULL, &player.Score);
+			}
+			else if(temp_score == 6){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_6], NULL, &player.Score);
+			}
+			else if(temp_score == 7){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_7], NULL, &player.Score);
+			}
+			else if(temp_score == 8){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_8], NULL, &player.Score);
+			}
+			else if(temp_score == 9){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_9], NULL, &player.Score);
+			}
+			player.Score.x -= 20;
+		}while(score > 0);	
+  	}
+//================================================== INSTRUCAO3 =========================================================
+  	else if(screen == INSTRUCAO3){
+  	//---------------------------------------------- BACKGROUND ---------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_BACKGROUND], NULL, NULL);
+	//---------------------------------------------- BOLAS ---------------------------------------------------------------
+		for(unsigned i = 0; i < bolas.size(); i++){
+			if(bolas[i].get_type() == "pointer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_POINTER], NULL, &bolas[i].Rect);
+			}
+			else if(bolas[i].get_type() == "murderer"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_MURDERER], NULL, &bolas[i].Rect);
+			}
+			else if(bolas[i].get_type() == "saver"){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_SAVER], NULL, &bolas[i].Rect);
+			}
+		}
+	//---------------------------------------------- MOUSE ---------------------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_PLAYER], NULL, &player.Rect);
+	//---------------------------------------------- RIP?? ---------------------------------------------------------------
+		if(rip >= 1 && rip <= 2599){
+			letraRect.x = (player.Rect.x - 80);
+			letraRect.y = (player.Rect.y - 80);
+			SDL_RenderCopy(Renderer, TextureBank[IMG_G], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_T], NULL, &letraRect);
+			letraRect.x += 20;
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_R], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_E], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_A], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_D], NULL, &letraRect);
+			letraRect.x += 20;
+			SDL_RenderCopy(Renderer, TextureBank[IMG_Y], NULL, &letraRect);
+			letraRect.x += 20;
+			letraRect.x = (player.Rect.x - 2);
+			letraRect.y = (player.Rect.y - 40);
+			if(rip >= 1 && rip <= 866){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &letraRect);
+			}
+			else if(rip >= 867 && rip <= 1732){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &letraRect);
+			}
+			else if(rip >= 1733 && rip <= 2599){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &letraRect);
+			}
+		}
+  	//---------------------------------------------- ICON LIFE + LIFE ----------------------------------------------------
+		SDL_RenderCopy(Renderer, TextureBank[IMG_USERLIFE], NULL, &player.Icon);
+		if(player.get_life() == 3){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &player.Life);
+		}
+		else if(player.get_life() == 2){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &player.Life);
+		}
+		else if(player.get_life() == 1){
+			SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &player.Life);
+		}
+  	//---------------------------------------------- SCORE --------------------------------------------------------------
+		int temp_score;
+		int score = player.get_score();
+		player.reset_x_rscore();
+		do{
+			temp_score = score%10;
+			score /= 10;
+			if(temp_score == 0){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_0], NULL, &player.Score);
+			}
+			else if(temp_score == 1){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &player.Score);
+			}
+			else if(temp_score == 2){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_2], NULL, &player.Score);
+			}
+			else if(temp_score == 3){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_3], NULL, &player.Score);
+			}
+			else if(temp_score == 4){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_4], NULL, &player.Score);
+			}
+			else if(temp_score == 5){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_5], NULL, &player.Score);
+			}
+			else if(temp_score == 6){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_6], NULL, &player.Score);
+			}
+			else if(temp_score == 7){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_7], NULL, &player.Score);
+			}
+			else if(temp_score == 8){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_8], NULL, &player.Score);
+			}
+			else if(temp_score == 9){
+				SDL_RenderCopy(Renderer, TextureBank[IMG_9], NULL, &player.Score);
+			}
+			player.Score.x -= 20;
+		}while(score > 0);	
+  	}
 //================================================== MENU ================================================================
   	else if(screen == MENU){
   	//---------------------------------------------- BACKGROUND ---------------------------------------------------------
@@ -242,7 +484,7 @@ void Drifts::Render(){
 		else if(player.get_life() == 1){
 			SDL_RenderCopy(Renderer, TextureBank[IMG_1], NULL, &player.Life);
 		}
-	//---------------------------------------------- player.score --------------------------------------------------------------
+	//---------------------------------------------- SCORE --------------------------------------------------------------
 		int temp_score;
 		int score = player.get_score();
 		player.reset_x_rscore();
