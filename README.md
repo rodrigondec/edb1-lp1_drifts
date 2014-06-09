@@ -19,9 +19,7 @@ No Windows o usuário só precisa fazer o download de todo o diretório do jogo 
 Já no sistema Linux é necessário fazer o download da biblioteca SDL, por meio dos comandos;
 “apt-get install(Ubuntu) ou yum install(Fedora)” dos seguintes componentes:
 
-SDL2-devel.x86_64
-SDL2_image-devel.x86_64 
-SDL2_mixer-devel.x86_64
+SDL2-devel.x86_64 | SDL2_image-devel.x86_64 | SDL2_mixer-devel.x86_64
 
 Após o download, automaticamente a biblioteca estará instalada no sistema e devidamente configurada em sua máquina.
 Com um editor de texto com build, por exemplo, o Sublime Text você precisará compilar o arquivo drifts.cpp e depois executar no terminal o executável "drifts".
