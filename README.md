@@ -15,7 +15,7 @@ O objetivo do jogo é o acúmulo de pontos, o usuário poderá acumular o maior 
 ------------------------------------------------- C O N F I G U R A Ç Ã O ------------------------------------------
 
 A biblioteca SDL funciona independente do Sistema Operacional(S.O.) utilizado para execução do jogo, entretanto cada S.O. possue uma configuração diferente para utilizá-la. No nosso caso criamos o jogo passível de execução no sistema Windows e Linux.
-No Windows o usuário só precisa fazer o download de todo o diretório do jogo e executar o .exe existente, pois a pasta está composta por tudo o que a biblioteca precisa para executar e compilar, imagens por exemplo precisam de outras bibliotecas para sofrerem renderização.
+No Windows o usuário só precisa fazer o download de todo o diretório do jogo e executar o .exe existente, pois a pasta está composta por tudo o que a biblioteca precisa para executar, imagens por exemplo precisam de outras bibliotecas para sofrerem renderização.
 Já no sistema Linux é necessário fazer o download da biblioteca SDL, por meio dos comandos;
 “apt-get install(Ubuntu) ou yum install(Fedora)” dos seguintes componentes:
 
