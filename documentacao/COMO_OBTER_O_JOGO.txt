@@ -1,0 +1,9 @@
+#O nosso jogo pode ser baixado nos seguintes links:
+https://github.com/claranobre/drifts
+
+ou 
+
+https://github.com/RodrigoNC/drifts
+
+#Por possuir um tamanho acima do permitido pelo SIGAA decidimos compartilhar o link de desenvolvimento do projeto no GitHub, ferramenta de compartilhamento e desenvolvimento de código. 
+#O usuário só precisa fazer o download do arquivo .zip do jogo que se encontra no link e seguir o nosso Manual.
